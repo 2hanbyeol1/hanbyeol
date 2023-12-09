@@ -1,6 +1,6 @@
-import Container from '../components/container'
-import Header from '../components/header'
-import About from '../components/about'
+import Container from '../components/common/container'
+import Header from '../components/common/header'
+import About from '../components/sections/about'
 
 export default function Home() {
   return (

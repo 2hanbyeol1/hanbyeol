@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
-import MyImage from './about/myImage'
-import LogoButton from './about/logoButton'
+import MyImage from '../about/myImage'
+import LogoButton from '../about/logoButton'
 
-import GitHub from '../public/image/github.svg'
-import Blog from '../public/image/blog.png'
-import Instagram from '../public/image/instagram.svg'
-import Velog from '../public/image/velog.png'
-import Title from './title'
+import GitHub from '../../public/image/github.svg'
+import Blog from '../../public/image/blog.png'
+import Instagram from '../../public/image/instagram.svg'
+import Velog from '../../public/image/velog.png'
+import Title from '../common/title'
 
 const infos = [
   '🐹 Hanbyeol Lee',
