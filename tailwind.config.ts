@@ -7,7 +7,17 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        bouncexy: {
+          '0%, 100%': { transform: 'translate(-25%, -25%)' },
+          '50%': { transform: 'translate(0, 0)' },
+        },
+      },
+      animation: {
+        'bounce-xy': 'bouncexy 1s linear infinite;',
+      },
+    },
   },
   plugins: [],
 }
