@@ -1,7 +1,7 @@
-'use client'
 import React from 'react'
 import MyImage from '../about/myImage'
 import LogoButton from '../about/logoButton'
+import Contact from '../about/contact'
 
 import GitHub from '../../public/image/github.svg'
 import Blog from '../../public/image/blog.png'
@@ -27,15 +27,6 @@ const links = [
 ]
 
 export default function About() {
-  const [isHovering, setIsHovering] = React.useState(false)
-
-  const onMouseEnter = () => {
-    setIsHovering(true)
-  }
-  const onMouseLeave = () => {
-    setIsHovering(false)
-  }
-
   return (
     <div id="about" className="py-20">
       <div className="flex flex-col mb-5 px-10 py-7 bg-white rounded-2xl">
@@ -57,11 +48,7 @@ export default function About() {
                   </div>
                 )
               })}
-              <div
-                className={`text-lg w-fit ${
-                  isHovering ? ' bg-yellow-300' : ''
-                }`}
-              >
+              <div id="email" className="text-lg w-fit">
                 📧 2hanbyeol1@naver.com
               </div>
             </div>
@@ -80,20 +67,7 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <div className="text-center text-white">
-        Contact me via&nbsp;
-        <span
-          className={`underline${
-            isHovering ? ' bg-yellow-300 text-black' : ''
-          }`}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          email
-        </span>
-        , please 🙏
-      </div>
+      <Contact />
     </div>
   )
 }
