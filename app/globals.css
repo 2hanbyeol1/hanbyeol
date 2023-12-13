@@ -12,16 +12,13 @@ body {
   color: black;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.card-back > div::-webkit-scrollbar {
   width: 6px;
 }
 
-.card-back::-webkit-scrollbar {
-  width: 8px;
-}
-
 body::-webkit-scrollbar-thumb,
-.card-back::-webkit-scrollbar-thumb {
+.card-back > div::-webkit-scrollbar-thumb {
   background-color: gray;
   border-radius: 10px;
   background-clip: padding-box;
@@ -60,7 +57,6 @@ body::-webkit-scrollbar-thumb,
   border-radius: 1rem;
   position: absolute;
   background-color: white;
-  overflow-y: auto;
   backface-visibility: hidden; /* 뒷면을 감추기 위해 설정 */
 }
 

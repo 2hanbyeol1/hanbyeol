@@ -35,7 +35,7 @@ export default function Project({ project }: { project: ProjectType }) {
           </div>
         </div>
         <div className="card-back flex flex-col justify-between">
-          <div>
+          <div className="overflow-y-auto">
             {project.content.map((c) => {
               return <div className="mb-3">✔️ {c}</div>
             })}

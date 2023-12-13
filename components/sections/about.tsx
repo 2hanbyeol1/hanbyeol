@@ -37,11 +37,8 @@ export default function About() {
   }
 
   return (
-    <>
-      <div
-        id="about"
-        className="flex flex-col mb-5 px-10 py-7 bg-white rounded-2xl"
-      >
+    <div id="about" className="py-20">
+      <div className="flex flex-col mb-5 px-10 py-7 bg-white rounded-2xl">
         <Title title="About me" />
         <div className="text-lg mb-3">
           안녕하세요! ~~~ 개발자,&nbsp;
@@ -84,7 +81,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="text-center">
+      <div className="text-center text-white">
         Contact me via&nbsp;
         <span
           className={`underline${
@@ -97,6 +94,6 @@ export default function About() {
         </span>
         , please 🙏
       </div>
-    </>
+    </div>
   )
 }

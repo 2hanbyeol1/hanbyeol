@@ -67,7 +67,7 @@ export const sideProjects: ProjectType[] = [
   },
   {
     name: 'chatchat',
-    skills: ['React', 'Typescript', 'axios', 'styled-components', 'Node.js'],
+    skills: ['React', 'Typescript', 'Node.js'],
     description: '웹 소켓을 이용한 채팅 애플리케이션',
     img: ChatChat,
     content: [
