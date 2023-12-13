@@ -7,7 +7,8 @@ body {
   color: white;
 }
 
-#about {
+#about,
+#projects div {
   color: black;
 }
 
@@ -15,9 +16,54 @@ body::-webkit-scrollbar {
   width: 6px;
 }
 
-body::-webkit-scrollbar-thumb {
+.card-back::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb,
+.card-back::-webkit-scrollbar-thumb {
   background-color: gray;
   border-radius: 10px;
   background-clip: padding-box;
   border: 2px solid transparent;
+}
+
+/* project card */
+.card {
+  width: 23rem;
+  height: 26rem;
+  margin: 1rem;
+  perspective: 1000px; /* 3D 효과를 위한 perspective 설정 */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* 3D 변환을 사용하도록 설정 */
+  transition: transform 0.7s; /* 트랜지션을 사용하여 부드러운 변환 효과 적용 */
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* hover 시 180도 회전 */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  position: absolute;
+  background-color: white;
+  overflow-y: auto;
+  backface-visibility: hidden; /* 뒷면을 감추기 위해 설정 */
+}
+
+.card-back {
+  transform: rotateY(180deg); /* 뒷면으로 초기에 돌려놓음 */
 }
