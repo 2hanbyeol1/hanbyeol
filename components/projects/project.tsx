@@ -7,6 +7,7 @@ import Url from '../../public/image/url.svg'
 import { ProjectType } from '../../constants/type'
 
 export default function Project({ project }: { project: ProjectType }) {
+  const num = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
   return (
     <div key={project.name} className="card">
       <div className="card-inner">
@@ -36,11 +37,15 @@ export default function Project({ project }: { project: ProjectType }) {
         </div>
         <div className="card-back flex flex-col justify-between">
           <div className="overflow-y-auto">
-            {project.content.map((c) => {
-              return <div className="mb-3">✔️ {c}</div>
+            {project.content.map((c, i) => {
+              return (
+                <div className="mb-4 last:mb-0">
+                  {num[i]} {c}
+                </div>
+              )
             })}
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-2">
             <Link href={project.github} target="_blank">
               <Image
                 className="mx-1"
