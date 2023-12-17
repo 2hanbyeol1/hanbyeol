@@ -25,7 +25,7 @@ export default function Home() {
               id={section.id}
               className={
                 section.isCentered
-                  ? 'flex flex-col justify-center h-screen'
+                  ? 'flex flex-col justify-center pt-20 sm:pt-20 h-screen'
                   : 'py-24 sm:py-20'
               }
             >

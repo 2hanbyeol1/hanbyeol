@@ -17,6 +17,7 @@ export default function MyImage() {
   return (
     <div className="relative">
       <Image
+        className="max-sm:w-44"
         src={isHovering ? Wink : Me}
         alt="me-image"
         onMouseEnter={onMouseEnter}

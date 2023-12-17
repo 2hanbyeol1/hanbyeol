@@ -29,30 +29,30 @@ const links = [
 export default function About() {
   return (
     <>
-      <div className="flex flex-col mb-5 px-10 py-7 bg-white rounded-2xl">
+      <div className="flex flex-col mb-1 sm:mb-5 px-5 sm:px-10 py-5 sm:py-7 bg-white rounded-2xl">
         <Title title="About me" />
-        <div className="text-lg mb-3">
+        <div className="text-lg mb-1 sm:mb-3">
           안녕하세요! ~~~ 개발자,&nbsp;
           <span className="font-semibold">이한별</span>입니다 :)
         </div>
-        <div className="flex">
-          <div className="flex flex-col justify-center items-center pr-10 border-r border-gray-300">
+        <div className="flex max-sm:flex-col">
+          <div className="flex justify-center items-center mb-1 sm:mb-0 sm:pr-10 sm:border-r sm:border-gray-300">
             <MyImage />
           </div>
-          <div className="flex flex-col justify-between pl-10">
-            <div>
+          <div className="flex flex-col justify-between sm:pl-10">
+            <div className="max-sm:mb-2">
               {infos.map((info, i) => {
                 return (
-                  <div key={`info-${i}`} className="text-lg w-fit">
+                  <div key={`info-${i}`} className="text-md sm:text-lg w-fit">
                     {info}
                   </div>
                 )
               })}
-              <div id="email" className="text-lg w-fit">
+              <div id="email" className="text-md sm:text-lg w-fit">
                 📧 2hanbyeol1@naver.com
               </div>
             </div>
-            <div className="flex">
+            <div className="flex max-sm:justify-center">
               {links.map((link, i) => {
                 return (
                   <LogoButton

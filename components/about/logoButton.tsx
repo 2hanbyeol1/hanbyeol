@@ -11,9 +11,9 @@ export default function LogoButton({
   name: string
 }) {
   return (
-    <div className="mr-3 last:mr-0">
+    <div className="max-sm:mx-1 sm:mr-3 last:mr-0">
       <a href={href} target="_blank">
-        <Image className="w-10 h-10" src={image} alt={`${name}-link`} />
+        <Image className="w-7 sm:w-10" src={image} alt={`${name}-link`} />
       </a>
     </div>
   )
