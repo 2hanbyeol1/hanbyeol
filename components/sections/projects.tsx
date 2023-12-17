@@ -5,7 +5,7 @@ import { teamProjects, sideProjects } from '../../constants/projects'
 
 export default function Projects() {
   return (
-    <div id="projects" className="py-20">
+    <>
       <Title title="Projects" />
       <div className="flex flex-wrap justify-center items-center py-3 border-b border-gray-500">
         {teamProjects.map((proj) => {
@@ -17,6 +17,6 @@ export default function Projects() {
           return <Project project={proj} />
         })}
       </div>
-    </div>
+    </>
   )
 }

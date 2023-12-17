@@ -7,7 +7,7 @@ import skillData from '../../constants/skills'
 
 export default function Skills() {
   return (
-    <div id="skills" className="py-20">
+    <>
       <Title title="Skills" />
       <div className="flex flex-col">
         {skillData.map((s) => {
@@ -23,6 +23,6 @@ export default function Skills() {
           )
         })}
       </div>
-    </div>
+    </>
   )
 }

@@ -28,7 +28,7 @@ const links = [
 
 export default function About() {
   return (
-    <div id="about" className="py-20">
+    <>
       <div className="flex flex-col mb-5 px-10 py-7 bg-white rounded-2xl">
         <Title title="About me" />
         <div className="text-lg mb-3">
@@ -68,6 +68,6 @@ export default function About() {
         </div>
       </div>
       <Contact />
-    </div>
+    </>
   )
 }
