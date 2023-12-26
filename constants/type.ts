@@ -6,6 +6,9 @@ import { StaticImageData } from 'next/image'
 export type SkillType = {
   name: string
   img: any
+  requireBg?: Boolean
+  rate: number
+  content?: string
 }
 
 // projects
