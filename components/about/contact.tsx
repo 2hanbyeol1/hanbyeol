@@ -1,8 +1,12 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Contact() {
-  const emailElement = document.querySelector('#email') as HTMLElement
+  let emailElement: HTMLElement | null = null
+
+  useEffect(() => {
+    emailElement = document.querySelector('#email')
+  }, [])
 
   const onMouseEnter = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
     e.currentTarget.style.backgroundColor = 'yellow'
