@@ -11,17 +11,14 @@ export default function Project({ project }: { project: ProjectType }) {
   return (
     <div key={project.name} className="card">
       <div className="card-inner">
-        <div className="card-front flex flex-col justify-center items-center">
-          <div className="mb-2 font-bold text-xl text-center">
-            {project.name}
+        <div className="card-front flex flex-col justify-center items-center gap-y-2">
+          <div className="font-bold text-xl text-center">{project.name}</div>
+          <div>{project.description}</div>
+          <div className="text-xs">
+            {getDateString(project.duration[0])} ~{' '}
+            {getDateString(project.duration[1])} ({project.dev}명)
           </div>
-          <div className="mb-2">{project.description}</div>
-          <Image
-            className="mb-2"
-            width={300}
-            src={project.img}
-            alt={project.name}
-          />
+          <Image width={300} src={project.img} alt={project.name} />
           <div className="flex flex-wrap mb-1">
             {project.skills.map((skill, i) => {
               return (
@@ -69,4 +66,15 @@ export default function Project({ project }: { project: ProjectType }) {
       </div>
     </div>
   )
+}
+
+/**
+ * Date를 string으로 바꿔줍니다
+ * ex | new Date(2023, 2) → 2023-02
+ */
+function getDateString(date: Date | null): string {
+  if (date === null) return 'ing'
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  return year + '-' + (month < 10 ? '0' + month : '' + month)
 }

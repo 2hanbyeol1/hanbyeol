@@ -14,12 +14,12 @@ export type SkillType = {
 // projects
 export type ProjectType = {
   name: string
+  duration: [Date, Date | null]
   skills: string[]
   description: string
   img: StaticImageData
   content: string[]
   github: string
   url?: string
-  fe?: number
-  be?: number
+  dev: number
 }

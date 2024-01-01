@@ -1,17 +1,17 @@
 import Liberty52 from '../public/image/liberty52.png'
 import Liberty52_Admin from '../public/image/admin-liberty52.png'
 import Portfolio from '../public/image/portfolio.png'
-import ChatChat from '../public/image/chatchat.png'
+// import ChatChat from '../public/image/chatchat.png'
 import Eyes from '../public/image/eyes.png'
-import Pororo from '../public/image/pororo.png'
-import Todo from '../public/image/todo.png'
+// import Pororo from '../public/image/pororo.png'
+// import Todo from '../public/image/todo.png'
 import { ProjectType } from './type'
 
-export const teamProjects: ProjectType[] = [
+export const projects: ProjectType[] = [
   {
     name: 'Liberty 52',
-    fe: 4,
-    be: 6,
+    dev: 10,
+    duration: [new Date(2023, 2), new Date(2023, 11)],
     skills: ['React', 'axios', 'styled-components'],
     description: '쇼핑몰 웹 사이트',
     img: Liberty52,
@@ -25,23 +25,23 @@ export const teamProjects: ProjectType[] = [
   },
   {
     name: 'Liberty 52 Admin',
-    fe: 4,
-    be: 6,
+    dev: 10,
+    duration: [new Date(2023, 2), new Date(2023, 11)],
     skills: ['React', 'axios', 'styled-components'],
     description: '쇼핑몰 웹 사이트 관리자 페이지',
     img: Liberty52_Admin,
     content: [
-      '팀 내에서 일관된 코드 스타일과 규칙을 정의하고 준수하는 것은 가독성을 향상시키고, 유지보수성을 높이며, 팀원 간의 협업을 원활하게 만들며 새로운 개발자가 프로젝트에 참여할 때에도 적응이 빠르게 이루어질 수 있으므로 중요하다.',
-      '서버와의 통신 과정에서 CORS, 400, 500 등 많은 에러를 겪었지만 네트워크 탭을 조회하며 디버깅하고 백엔드 개발자와 소통하며 네트워크 관련 에러들을 핸들링하는 법을 배웠다.',
-      'Agile을 적용하여 통해 짧은 개발 주기로 프로젝트를 나누고, 각 주기에서 새로운 요구사항이나 변경 사항을 빠르게 수용할 수 있었으며 각 주기에서 데모를 해보며 팀원들로부터 피드백을 받아 개선할 부분을 빠르게 확인하고 적용하는 것이 프로젝트 품질 향상에 도움이 되었다.',
+      '팀 내에서 일관된 코드 스타일과 규칙을 정의하고 준수하는 것은 가독성을 향상시키고, 유지보수성을 높이며, 팀원 간의 협업을 원활하게 만들며 새로운 개발자가 프로젝트에 참여할 때에도 적응이 빠르게 이루어질 수 있도록 하였다.',
+      'CORS, 400 등 네트워크 에러에 익숙해지게 되었다.',
+      'Agile을 적용하여 통해 짧은 개발 주기로 백로그를 나누고, 각 주기에서 새로운 요구사항이나 변경 사항을 빠르게 수용할 수 있었으며 각 주기에서 데모를 해보며 팀원들 또는 고객사로부터 피드백을 받아 개선할 부분을 빠르게 확인하고 적용하는 것이 프로젝트 품질 향상에 도움이 되었다.',
     ],
     github: 'https://github.com/2hanbyeol1/liberty-admin-page',
     url: 'https://admin.liberty52.com/',
   },
   {
     name: 'Egomogo',
-    fe: 3,
-    be: 3,
+    dev: 6,
+    duration: [new Date(2023, 6), new Date(2023, 7)],
     skills: ['React Native', 'axios', 'styled-components'],
     description: '명지대 주변 식당 추천 앱',
     img: Liberty52,
@@ -51,11 +51,10 @@ export const teamProjects: ProjectType[] = [
     ],
     github: 'https://github.com/2hanbyeol1/egomogo-front-end',
   },
-]
-
-export const sideProjects: ProjectType[] = [
   {
     name: 'portfolio',
+    dev: 1,
+    duration: [new Date(2023, 11), null],
     skills: ['React', 'Next.js', 'Typescript', 'Tailwind CSS'],
     description: '포트폴리오 웹 페이지',
     img: Portfolio,
@@ -65,19 +64,22 @@ export const sideProjects: ProjectType[] = [
     ],
     github: 'https://github.com/2hanbyeol1/hanbyeol',
   },
-  {
-    name: 'chatchat',
-    skills: ['React', 'Typescript', 'Node.js'],
-    description: '웹 소켓을 이용한 채팅 애플리케이션',
-    img: ChatChat,
-    content: [
-      'Node.js를 처음 접해보았다.',
-      '항상 채팅은 어떤 방식으로 구현하는지 궁금했는데 많은 방식 중 웹 소켓을 이용해서 구현해봐서 좋았다.',
-    ],
-    github: 'https://github.com/2hanbyeol1/chatchat#readme',
-  },
+  // {
+  //   name: 'chatchat',
+  //   duration: [new Date(2023, 9), new Date(2023, 10)],
+  //   skills: ['React', 'Typescript', 'Node.js'],
+  //   description: '웹 소켓을 이용한 채팅 애플리케이션',
+  //   img: ChatChat,
+  //   content: [
+  //     'Node.js를 처음 접해보았다.',
+  //     '항상 채팅은 어떤 방식으로 구현하는지 궁금했는데 많은 방식 중 웹 소켓을 이용해서 구현해봐서 좋았다.',
+  //   ],
+  //   github: 'https://github.com/2hanbyeol1/chatchat#readme',
+  // },
   {
     name: '명지대학교 수강신청 연습',
+    dev: 1,
+    duration: [new Date(2023, 6), new Date(2023, 7)],
     skills: ['React Native', 'Recoil'],
     description: '명지대학교 수강신청 연습 애플리케이션',
     img: Eyes,
@@ -88,35 +90,5 @@ export const sideProjects: ProjectType[] = [
       '배포하는데 어려움을 겪어서 아직 못했는데 꼭 해보고 싶다. 다음 수강신청 전에 배포하고 싶다',
     ],
     github: 'https://github.com/2hanbyeol1/sugang-practice#sugang-practice',
-  },
-  {
-    name: 'eyes',
-    skills: ['React', 'html canvas'],
-    description: 'html canvas를 이용한 움직이는 눈알',
-    img: Eyes,
-    content: [
-      'canvas를 이용하여 interactive한 웹을 만드는 연습!',
-      '눈알 안쪽에 커서를 놔두면 오류가 있어서 아쉬움',
-    ],
-    github: 'https://github.com/2hanbyeol1/eyes#readme',
-    url: 'https://2hanbyeol1.github.io/eyes/',
-  },
-  {
-    name: '뽀로로 찾기',
-    skills: ['html', 'css', 'js'],
-    description: '카드를 뒤집어서 뽀로로를 찾는 웹 게임',
-    img: Pororo,
-    content: ['js를 이용한 애니메이션을 추가'],
-    github: 'https://github.com/2hanbyeol1/pororo',
-    url: 'https://2hanbyeol1.github.io/pororo/html/game.html',
-  },
-  {
-    name: 'TO DO LIST',
-    skills: ['html', 'css', 'js'],
-    description: '할 일 목록을 저장 가능한 투두리스트 웹 페이지',
-    img: Todo,
-    content: ['html css js 를 처음 접할 수 있었던 프로젝트!'],
-    github: 'https://github.com/2hanbyeol1/todo',
-    url: 'https://2hanbyeol1.github.io/todo/',
   },
 ]
