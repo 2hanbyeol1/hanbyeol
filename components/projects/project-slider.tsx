@@ -44,10 +44,10 @@ export default function ProjectSlider() {
         onMouseLeave={handleMouseLeave}
       >
         {projects.map((proj) => {
-          return <Project project={proj} />
+          return <Project key={`${proj.name}-1`} project={proj} />
         })}
         {projects.map((proj) => {
-          return <Project project={proj} />
+          return <Project key={`${proj.name}-2`} project={proj} />
         })}
       </div>
     </div>

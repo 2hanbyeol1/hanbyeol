@@ -9,7 +9,7 @@ import { ProjectType } from '../../constants/type'
 export default function Project({ project }: { project: ProjectType }) {
   const num = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
   return (
-    <div key={project.name} id={project.name} className="card">
+    <div id={project.name} className="card">
       <div className="card-inner">
         <div className="card-front flex flex-col justify-center items-center gap-y-2">
           <div className="font-bold text-xl text-center">{project.name}</div>
@@ -24,7 +24,7 @@ export default function Project({ project }: { project: ProjectType }) {
               return (
                 <span
                   className="mr-1 mb-1 px-2 py-1 text-xs border border-gray-400 rounded-lg last:mr-0"
-                  key={`${skill}-${i}`}
+                  key={`${project.name}-${skill}`}
                 >
                   {skill}
                 </span>
@@ -36,7 +36,7 @@ export default function Project({ project }: { project: ProjectType }) {
           <div className="overflow-y-auto">
             {project.content.map((c, i) => {
               return (
-                <div className="mb-4 last:mb-0">
+                <div key={`${project.name}-${i}`} className="mb-4 last:mb-0">
                   {num[i]} {c}
                 </div>
               )
