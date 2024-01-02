@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
+import ScrollEvent from '@/components/common/scrollEvent'
 import Container from '../components/common/container'
 import Header from '../components/common/header'
 import About from '../components/sections/about'
@@ -19,6 +20,7 @@ const sections: { id: string; node: React.ReactNode }[] = [
 export default function Home() {
   return (
     <>
+      <ScrollEvent />
       <Header headerItems={headerItems} />
       <Container>
         {sections.map((section) => {
@@ -26,8 +28,7 @@ export default function Home() {
             <article
               key={section.id}
               id={section.id}
-              className="pt-20 sm:pt-20 h-screen flex flex-col justify-center
-              }"
+              className="pt-20 sm:pt-20 h-screen flex flex-col justify-center"
             >
               {section.node}
             </article>
