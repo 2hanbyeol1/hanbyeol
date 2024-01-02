@@ -7,11 +7,11 @@ import Career from '../components/sections/carrer'
 
 const headerItems = ['About', 'Skills', 'Projects', 'Career']
 
-const sections: { id: string; node: React.ReactNode; isCentered: boolean }[] = [
-  { id: 'about', node: <About />, isCentered: true },
-  { id: 'skills', node: <Skills />, isCentered: true },
-  { id: 'projects', node: <Projects />, isCentered: false },
-  { id: 'career', node: <Career />, isCentered: true },
+const sections: { id: string; node: React.ReactNode }[] = [
+  { id: 'about', node: <About /> },
+  { id: 'skills', node: <Skills /> },
+  { id: 'projects', node: <Projects /> },
+  { id: 'career', node: <Career /> },
 ]
 
 export default function Home() {
@@ -21,15 +21,14 @@ export default function Home() {
       <Container>
         {sections.map((section) => {
           return (
-            <div
+            <article
               key={section.id}
               id={section.id}
-              className={`pt-20 sm:pt-20 h-screen${
-                section.isCentered ? ' flex flex-col justify-center' : 'h-full'
-              }`}
+              className="pt-20 sm:pt-20 h-screen flex flex-col justify-center
+              }"
             >
               {section.node}
-            </div>
+            </article>
           )
         })}
         {/* <Footer /> */}

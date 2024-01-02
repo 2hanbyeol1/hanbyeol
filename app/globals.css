@@ -31,9 +31,10 @@ body::-webkit-scrollbar-thumb,
 
 /* project card */
 .card {
+  display: inline-block;
   width: 23rem;
   height: 26rem;
-  margin: 1rem;
+  margin-right: 2rem;
   perspective: 1000px; /* 3D 효과를 위한 perspective 설정 */
 }
 

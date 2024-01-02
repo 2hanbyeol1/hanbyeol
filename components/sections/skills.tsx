@@ -1,4 +1,3 @@
-'use client'
 import Title from '../common/title'
 import SkillTitle from '../skills/title'
 import Skill from '../skills/skill'

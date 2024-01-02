@@ -9,7 +9,7 @@ import { ProjectType } from '../../constants/type'
 export default function Project({ project }: { project: ProjectType }) {
   const num = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
   return (
-    <div key={project.name} className="card">
+    <div key={project.name} id={project.name} className="card">
       <div className="card-inner">
         <div className="card-front flex flex-col justify-center items-center gap-y-2">
           <div className="font-bold text-xl text-center">{project.name}</div>
