@@ -61,9 +61,12 @@ export default function ScrollEvent() {
     const handleTouchEnd = (e: TouchEvent) => {
       if (!canTriggerScroll) return
 
-      canTriggerScroll = false
       const endTouchY = e.changedTouches[0].clientY
       const deltaY = startTouchY - endTouchY
+
+      if (Math.abs(deltaY) <= 20) return // delta 값이 작은 경우
+
+      canTriggerScroll = false
       if (deltaY < 0) scrollUpByViewportHeight()
       else scrollDownByViewportHeight()
 
