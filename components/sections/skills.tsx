@@ -1,8 +1,8 @@
-import Title from '../common/title'
-import SkillTitle from '../skills/title'
-import Skill from '../skills/skill'
+import Title from '../common/title';
+import SkillTitle from '../common/title2';
+import Skill from '../skills/skill';
 
-import skillData from '../../constants/skills'
+import skillData from '../../constants/skills';
 
 export default function Skills() {
   return (
@@ -15,13 +15,15 @@ export default function Skills() {
               <SkillTitle title={s.title} />
               <div className="flex flex-wrap items-center">
                 {s.skills.map((skill) => {
-                  return <Skill key={`${skill.name}-container`} skill={skill} />
+                  return (
+                    <Skill key={`${skill.name}-container`} skill={skill} />
+                  );
                 })}
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </>
-  )
+  );
 }
