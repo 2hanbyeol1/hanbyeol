@@ -30,6 +30,27 @@ body::-webkit-scrollbar-thumb,
   border: 2px solid transparent;
 }
 
+/* project slider */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+#slider-inner {
+  animation-duration: 20s;
+  animation-name: slide;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#slider-inner:hover {
+  animation-play-state: paused;
+}
+
 /* project card */
 .card {
   display: inline-block;
