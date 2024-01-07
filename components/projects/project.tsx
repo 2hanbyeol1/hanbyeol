@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
-import GitHub from '../../public/image/github.svg'
-import Url from '../../public/image/url.svg'
+import GitHub from '../../public/image/icon/github.svg';
+import Url from '../../public/image/icon/url.svg';
 
-import { ProjectType } from '../../constants/type'
+import { ProjectType } from '../../constants/type';
 
 export default function Project({ project }: { project: ProjectType }) {
-  const num = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
+  const num = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
   return (
     <div id={project.name} className="card">
       <div className="card-inner">
@@ -28,7 +28,7 @@ export default function Project({ project }: { project: ProjectType }) {
                 >
                   {skill}
                 </span>
-              )
+              );
             })}
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function Project({ project }: { project: ProjectType }) {
                 <div key={`${project.name}-${i}`} className="mb-4 last:mb-0">
                   {num[i]} {c}
                 </div>
-              )
+              );
             })}
           </div>
           <div className="flex justify-center mt-2">
@@ -65,7 +65,7 @@ export default function Project({ project }: { project: ProjectType }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 /**
@@ -73,8 +73,8 @@ export default function Project({ project }: { project: ProjectType }) {
  * ex | new Date(2023, 2) → 2023-02
  */
 function getDateString(date: Date | null): string {
-  if (date === null) return 'ing'
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  return year + '-' + (month < 10 ? '0' + month : '' + month)
+  if (date === null) return 'ing';
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  return year + '-' + (month < 10 ? '0' + month : '' + month);
 }

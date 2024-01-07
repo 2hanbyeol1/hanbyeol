@@ -1,19 +1,19 @@
-import React from 'react'
-import MyImage from '../about/myImage'
-import LogoButton from '../about/logoButton'
-import Contact from '../about/contact'
+import React from 'react';
+import MyImage from '../about/myImage';
+import LogoButton from '../about/logoButton';
+import Contact from '../about/contact';
 
-import GitHub from '../../public/image/github.svg'
-import Blog from '../../public/image/blog.png'
-import Instagram from '../../public/image/instagram.svg'
-import Velog from '../../public/image/velog.png'
-import Title from '../common/title'
+import GitHub from '../../public/image/icon/github.svg';
+import Blog from '../../public/image/icon/blog.png';
+import Instagram from '../../public/image/icon/instagram.svg';
+import Velog from '../../public/image/icon/velog.png';
+import Title from '../common/title';
 
 const infos = [
   '🐹 Hanbyeol Lee',
   '🎂 2001-12-30',
   '✏️ 명지대학교, 융합소프트웨어학부',
-]
+];
 
 const links = [
   { img: GitHub, href: 'https://github.com/2hanbyeol1', name: 'github' },
@@ -24,7 +24,7 @@ const links = [
     href: 'https://www.instagram.com/1nstargram_/',
     name: 'instagram',
   },
-]
+];
 
 export default function About() {
   return (
@@ -46,7 +46,7 @@ export default function About() {
                   <div key={`info-${i}`} className="text-md sm:text-lg w-fit">
                     {info}
                   </div>
-                )
+                );
               })}
               <div id="email" className="text-md sm:text-lg w-fit">
                 📧 2hanbyeol1@naver.com
@@ -61,7 +61,7 @@ export default function About() {
                     image={link.img}
                     name={link.name}
                   />
-                )
+                );
               })}
             </div>
           </div>
@@ -69,5 +69,5 @@ export default function About() {
       </div>
       <Contact />
     </>
-  )
+  );
 }

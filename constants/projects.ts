@@ -1,11 +1,11 @@
-import Liberty52 from '../public/image/liberty52.png'
-import Liberty52_Admin from '../public/image/admin-liberty52.png'
-import Portfolio from '../public/image/portfolio.png'
-// import ChatChat from '../public/image/chatchat.png'
-import Eyes from '../public/image/eyes.png'
-// import Pororo from '../public/image/pororo.png'
-// import Todo from '../public/image/todo.png'
-import { ProjectType } from './type'
+import Liberty52 from '../public/image/project/liberty52.png';
+import Liberty52_Admin from '../public/image/project/admin-liberty52.png';
+import Portfolio from '../public/image/project/portfolio.png';
+// import ChatChat from '../public/image/project/chatchat.png'
+import Eyes from '../public/image/project/eyes.png';
+// import Pororo from '../public/image/project/pororo.png'
+// import Todo from '../public/image/project/todo.png'
+import { ProjectType } from './type';
 
 export const projects: ProjectType[] = [
   {
@@ -91,4 +91,4 @@ export const projects: ProjectType[] = [
     ],
     github: 'https://github.com/2hanbyeol1/sugang-practice#sugang-practice',
   },
-]
+];

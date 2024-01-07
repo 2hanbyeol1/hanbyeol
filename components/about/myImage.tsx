@@ -1,18 +1,18 @@
-'use client'
-import React from 'react'
-import Image from 'next/image'
-import Me from '../../public/image/me.png'
-import Wink from '../../public/image/wink.png'
-import Cursor from '../../public/image/cursor.png'
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import Me from '../../public/image/about/me.png';
+import Wink from '../../public/image/about/wink.png';
+import Cursor from '../../public/image/icon/cursor.png';
 
 export default function MyImage() {
-  const [isHovering, setIsHovering] = React.useState<boolean>(false)
+  const [isHovering, setIsHovering] = React.useState<boolean>(false);
   const onMouseEnter = () => {
-    setIsHovering(true)
-  }
+    setIsHovering(true);
+  };
   const onMouseLeave = () => {
-    setIsHovering(false)
-  }
+    setIsHovering(false);
+  };
 
   return (
     <div className="relative">
@@ -31,5 +31,5 @@ export default function MyImage() {
         alt="cursor-image"
       />
     </div>
-  )
+  );
 }
