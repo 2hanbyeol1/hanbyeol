@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -14,8 +14,8 @@ const config: Config = {
           '50%': { transform: 'translate(0, 0)' },
         },
         scale: {
-          '0%': { transform: 'scale(1)' },
-          '100%': { transform: 'scale(1.3)' },
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' },
         },
       },
       animation: {
@@ -25,5 +25,5 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;

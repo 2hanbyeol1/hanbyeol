@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function NotFound() {
   return (
     <div>
@@ -6,10 +8,10 @@ export default function NotFound() {
           HanbyeoL⭐
         </div>
         <div className="py-3">페이지를 찾을 수 없습니다.</div>
-        <a className="bg-white text-black px-3 py-1 rounded" href="/">
+        <Link className="bg-white text-black px-3 py-1 rounded" href="/">
           포트폴리오 보러가기
-        </a>
+        </Link>
       </div>
     </div>
-  )
+  );
 }

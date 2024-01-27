@@ -6,19 +6,25 @@ import Url from '../../public/image/icon/url.svg';
 
 import { ProjectType } from '../../constants/type';
 
-export default function Project({ project }: { project: ProjectType }) {
+export default function Project({
+  project,
+  idx,
+}: {
+  project: ProjectType;
+  idx: number;
+}) {
   const num = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
   return (
     <div id={project.name} className="card">
       <div className="card-inner">
         <div className="card-front flex flex-col justify-center items-center gap-y-2">
+          <div className="!text-gray-500">#{idx + 1}</div>
           <div className="font-bold text-xl text-center">{project.name}</div>
           <div>{project.description}</div>
           <div className="text-xs">
             {getDateString(project.duration[0])} ~{' '}
             {getDateString(project.duration[1])} ({project.dev}명)
           </div>
-          <Image width={300} src={project.img} alt={project.name} />
           <div className="flex flex-wrap mb-1">
             {project.skills.map((skill, i) => {
               return (
@@ -32,8 +38,10 @@ export default function Project({ project }: { project: ProjectType }) {
             })}
           </div>
         </div>
-        <div className="card-back flex flex-col justify-between">
-          <div className="overflow-y-auto">
+        <div className="card-back flex flex-col items-center justify-between">
+          <div></div>
+          <Image width={300} src={project.img} alt={project.name} />
+          {/* <div className="overflow-y-auto">
             {project.content.map((c, i) => {
               return (
                 <div key={`${project.name}-${i}`} className="mb-4 last:mb-0">
@@ -41,7 +49,7 @@ export default function Project({ project }: { project: ProjectType }) {
                 </div>
               );
             })}
-          </div>
+          </div> */}
           <div className="flex justify-center mt-2">
             <Link href={project.github} target="_blank">
               <Image

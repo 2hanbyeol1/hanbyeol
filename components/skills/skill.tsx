@@ -1,41 +1,42 @@
-'use client'
-import React, { MouseEvent } from 'react'
-import Image from 'next/image'
-import Rating from './rating'
-import { SkillType } from '../../constants/type'
+'use client';
+import React, { MouseEventHandler, useState } from 'react';
+import { SkillType } from '../../constants/type';
+import Modal from '../common/modal';
 
 export default function Skill({ skill }: { skill: SkillType }) {
-  const onMouseEnter = (e: MouseEvent<HTMLDivElement>) => {
-    e?.currentTarget?.children[1]?.classList.remove('hidden')
-  }
+  const [modal, setModal] = useState(false);
 
-  const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
-    e?.currentTarget?.children[1]?.classList.add('hidden')
+  const openModal = () => {
+    setModal(true);
+  };
+
+  const closeModal: MouseEventHandler = (e) => {
+    setModal(false);
+  };
+
+  const modalContents = [];
+
+  for (const content of skill.contents) {
+    modalContents.push(
+      <li key={content} className="mr-9 text-sm sm:text-base">
+        {content}
+      </li>
+    );
   }
 
   return (
-    <div
-      id={skill.name}
-      className="flex justify-center items-center mx-3 my-1 relative w-10 y-10"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <Image
-        className={`${
-          skill.requireBg && 'bg-white rounded-full '
-        }h-min z-0 hover:animate-scale-up fill-mode-forwards`}
-        width={30}
-        src={skill.img}
-        alt={skill.name}
+    <>
+      <Modal
+        title={skill.name}
+        content={modalContents}
+        isOpen={modal}
+        onClose={closeModal}
       />
-      <div
-        id={`${skill.name}-des`}
-        className="hidden absolute top-full left-1/2 transform -translate-x-1/2 translate-y-2.5 flex flex-col items-center bg-white text-black text-xs px-2 py-1 rounded-sm z-10"
-      >
-        <div className="font-semibold">{skill.name}</div>
-        <Rating id={`${skill.name}-bar`} rate={skill.rate} />
-        <div className="mt-1">{skill.content}</div>
+      <div className="flex flex-wrap mr-3 mb-5" onClick={openModal}>
+        <div className="inline-block p-3 border border-white rounded-lg hover:bg-gray-800">
+          {skill.name}
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }

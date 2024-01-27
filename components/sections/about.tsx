@@ -32,7 +32,7 @@ export default function About() {
       <div className="flex flex-col mb-1 sm:mb-5 px-5 sm:px-10 py-5 sm:py-7 bg-white rounded-2xl">
         <Title title="About me" />
         <div className="text-lg mb-1 sm:mb-3">
-          안녕하세요! ~~~ 개발자,&nbsp;
+          안녕하세요! 프론트엔드 개발자,&nbsp;
           <span className="font-semibold">이한별</span>입니다 :)
         </div>
         <div className="flex max-sm:flex-col">
