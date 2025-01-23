@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"/>
 <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
 <img src="https://img.shields.io/badge/tailwind-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-<!-- <img src="https://img.shields.io/badge/zustand-F3DF49?style=for-the-badge&logo=zustand&logoColor=white"/> -->
+<img src="https://img.shields.io/badge/zustand-F3DF49?style=for-the-badge&logo=zustand&logoColor=white"/>
 <!-- <img src="https://img.shields.io/badge/TANSTACK QUERY-FF4154?style=for-the-badge&logo=react-query&logoColor=white"/> -->
 
 ### 커밋 메시지
