@@ -1,6 +1,6 @@
 import { SECTION_ID } from '@/constants/section';
 import useSectionObserver from '@/hooks/useSectionObserver';
-import IntroText from '../atoms/IntroText';
+import IntroText from './IntroText';
 
 function IntroSection() {
   const { setSection } = useSectionObserver({ sectionId: SECTION_ID.intro });

@@ -3,7 +3,7 @@ import useScrollProgress from '@/hooks/useScrollProgress';
 import useThrottle from '@/hooks/useThrottle';
 import { useEffect } from 'react';
 
-function ProgressBar() {
+function HeaderProgress() {
   const { progress, handleScroll } = useScrollProgress();
   const throttleOnScroll = useThrottle(handleScroll, 30);
 
@@ -31,4 +31,4 @@ function ProgressBar() {
     </>
   );
 }
-export default ProgressBar;
+export default HeaderProgress;

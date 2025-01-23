@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useActiveIndexStore from './store/useActiveSectionIdStore';
+import useActiveIndexStore from '../stores/useActiveSectionIdStore';
 
 function useSectionObserver({ sectionId }: { sectionId: string }) {
   const [section, setSection] = useState<Element | null>(null);

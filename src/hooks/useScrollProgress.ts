@@ -8,7 +8,7 @@ function useScrollProgress() {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
     const progressHeight = window.scrollY;
-    return Math.floor((progressHeight / totalHeight) * 100);
+    return Math.min((progressHeight / totalHeight) * 100, 100);
   }
 
   function handleScroll() {

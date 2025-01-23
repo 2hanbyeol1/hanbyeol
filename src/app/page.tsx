@@ -1,10 +1,10 @@
 'use client';
-import ContactSection from '@/components/organisms/ContactSection';
-import ExperiencesSection from '@/components/organisms/ExperiencesSection';
-import Header from '@/components/organisms/Header';
-import IntroSection from '@/components/organisms/IntroSection';
-import ProjectsSection from '@/components/organisms/ProjectsSection';
-import SkillsSection from '@/components/organisms/SkillsSection';
+import Header from '@/components/Header';
+import ContactSection from '@/components/Sections/ContactSection';
+import ExperiencesSection from '@/components/Sections/ExperiencesSection';
+import IntroSection from '@/components/Sections/IntroSection';
+import ProjectsSection from '@/components/Sections/ProjectsSection';
+import SkillsSection from '@/components/Sections/SkillsSection';
 
 function Page() {
   return (
