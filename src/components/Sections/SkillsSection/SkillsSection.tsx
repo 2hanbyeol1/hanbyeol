@@ -14,18 +14,19 @@ function SkillsSection() {
       ref={setTarget}
       className="mt-60 scroll-mt-36"
     >
-      <div className="relative mx-auto grid w-full max-w-[58rem] grid-cols-1 gap-x-20 gap-y-40 px-8 tablet:grid-cols-2">
+      <ul className="relative mx-auto grid w-full max-w-[58rem] grid-cols-1 gap-x-20 gap-y-40 px-8 tablet:grid-cols-2">
         <div className="absolute -left-32 -top-32 aspect-square w-full max-w-[30rem] rounded-full bg-primary/30 blur-[220px]"></div>
         {SKILL_CONTENTS.map(({ title, descriptions, imgFileName }, idx) => (
-          <Skill
-            key={title}
-            className={idx % 2 === 0 ? '' : 'animate-delay'}
-            title={title}
-            descriptions={descriptions}
-            imgFileName={imgFileName}
-          />
+          <li key={title}>
+            <Skill
+              className={idx % 2 === 0 ? '' : 'animate-delay'}
+              title={title}
+              descriptions={descriptions}
+              imgFileName={imgFileName}
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

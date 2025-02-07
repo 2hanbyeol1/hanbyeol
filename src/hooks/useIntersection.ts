@@ -28,6 +28,7 @@ function useIntersection({
     }, options);
 
     observer.observe(target);
+    return () => observer.disconnect();
   }, [onIntersect, options, target]);
 
   return { setTarget };
