@@ -1,15 +1,15 @@
 import { SECTION_ID } from '@/constants/section';
-import useSectionObserver from '@/hooks/useSectionObserver';
+import { useSectionObserver } from '@/hooks/useIntersection';
 
 function ContactSection() {
-  const { setSection } = useSectionObserver({
+  const { setTarget } = useSectionObserver({
     sectionId: SECTION_ID.contact,
   });
 
   return (
     <section
       id={SECTION_ID.contact}
-      ref={setSection}
+      ref={setTarget}
       className="flex h-screen w-full items-center justify-center"
     >
       ContactSection

@@ -1,18 +1,32 @@
+import { SKILL_CONTENTS } from '@/constants/contents';
 import { SECTION_ID } from '@/constants/section';
-import useSectionObserver from '@/hooks/useSectionObserver';
+import { useSectionObserver } from '@/hooks/useIntersection';
+import Skill from './Skill';
 
 function SkillsSection() {
-  const { setSection } = useSectionObserver({
+  const { setTarget } = useSectionObserver({
     sectionId: SECTION_ID.skills,
   });
 
   return (
     <section
       id={SECTION_ID.skills}
-      ref={setSection}
-      className="flex h-screen w-full items-center justify-center"
+      ref={setTarget}
+      className="mt-60 scroll-mt-36"
     >
-      SkillsSection
+      <ul className="relative mx-auto grid w-full max-w-[58rem] grid-cols-1 gap-x-20 gap-y-40 px-8 tablet:grid-cols-2">
+        <div className="absolute -left-32 -top-32 aspect-square w-full max-w-[30rem] rounded-full bg-primary/30 blur-[220px]"></div>
+        {SKILL_CONTENTS.map(({ title, descriptions, imgFileName }, idx) => (
+          <li key={title}>
+            <Skill
+              className={idx % 2 === 0 ? '' : 'animate-delay'}
+              title={title}
+              descriptions={descriptions}
+              imgFileName={imgFileName}
+            />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

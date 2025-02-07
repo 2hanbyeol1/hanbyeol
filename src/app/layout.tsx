@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${pretendard.variable} scroll-smooth`}>
-      <body>{children}</body>
+      <body className="font-pretendard">{children}</body>
     </html>
   );
 }

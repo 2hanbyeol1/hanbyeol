@@ -15,12 +15,12 @@ function HeaderNav() {
   ];
 
   return (
-    <nav className="flex w-full gap-4 p-4 font-semibold max-tablet:h-full max-tablet:flex-col tablet:justify-between">
+    <nav className="absolute flex w-screen items-center gap-4 bg-gradient-to-b from-white/100 via-white/70 to-white/0 px-4 pb-10 pt-5 font-semibold backdrop-blur-sm max-tablet:pt-4">
       {NAV_ITEMS.map((item) => (
         <Link
           key={item}
           href={`#${item}`}
-          className={`w-1/5 ${item === activeSectionId ? 'text-primary' : 'text-primary3'} `}
+          className={`w-1/5 transition-[font-size] max-tablet:w-full ${item === activeSectionId ? 'text-base text-primary' : 'text-sm text-primary3'}`}
         >
           {capitalize(item)}
         </Link>

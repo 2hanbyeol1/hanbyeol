@@ -13,6 +13,9 @@ export default {
       tablet: '768px',
     },
     extend: {
+      fontFamily: {
+        pretendard: 'var(--font-pretendard)',
+      },
       colors: {
         primary: '#5372EE',
         primary2: '#879DF4',
