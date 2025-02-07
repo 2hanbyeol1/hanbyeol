@@ -3,5 +3,24 @@
 @tailwind utilities;
 
 * {
-  @apply text-dark leading-none tracking-tighter;
+  @apply leading-none text-dark;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0%;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+.animate-opacity {
+  animation: 0.7s opacity ease-in-out forwards;
+}
+
+.animate-delay {
+  animation-delay: 0.5s;
 }

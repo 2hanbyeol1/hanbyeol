@@ -1,6 +1,6 @@
 function IntroText() {
   return (
-    <div className="text-center text-2xl foldable:text-3xl tablet:text-end tablet:text-4xl [&>p]:leading-tight">
+    <h1 className="text-center text-3xl font-semibold foldable:text-3xl tablet:text-end tablet:text-4xl [&>p]:leading-snug">
       <p>반갑습니다!</p>
       <p className="text-primary">
         <span className="inline-block font-bold text-primary">
@@ -14,11 +14,11 @@ function IntroText() {
       <p>
         <span className="inline-block">프론트엔드 개발자</span>&nbsp;
         <span className="inline-block">
-          <span className="font-bold">이한별</span>
+          <strong className="font-bold">이한별</strong>
           입니다.
         </span>
       </p>
-    </div>
+    </h1>
   );
 }
 
