@@ -1,19 +1,23 @@
+import SlideInView from '@/components/SlideInView';
 import { SECTION_ID } from '@/constants/section';
-import { useSectionObserver } from '@/hooks/useIntersection';
+import { EXPERIENCE_CONTENTS } from '@/data/experience';
+import SectionWrapper from '../SectionWrapper';
+import Experience from './Experience';
 
 function ExperiencesSection() {
-  const { setTarget } = useSectionObserver({
-    sectionId: SECTION_ID.experiences,
-  });
-
   return (
-    <section
-      id={SECTION_ID.experiences}
-      ref={setTarget}
-      className="flex h-screen w-full items-center justify-center"
+    <SectionWrapper
+      sectionId={SECTION_ID.experiences}
+      className="mt-[32rem] scroll-mt-36"
     >
-      ExperiencesSection
-    </section>
+      <div className="mx-auto flex w-full max-w-[58rem] flex-col gap-28 px-16 max-mobile:px-8">
+        {EXPERIENCE_CONTENTS.map((experience) => (
+          <SlideInView key={`exp-${experience.title}`}>
+            <Experience experience={experience} />
+          </SlideInView>
+        ))}
+      </div>
+    </SectionWrapper>
   );
 }
 export default ExperiencesSection;

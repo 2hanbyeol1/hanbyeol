@@ -1,17 +1,13 @@
-import { TSkillContents } from '@/constants/contents';
-import { useIntersectionOpacity } from '@/hooks/useIntersection';
+import { TSkillContent } from '@/data/skill';
 import Image from 'next/image';
-import { ComponentProps } from 'react';
 
 function Skill({
-  title,
-  descriptions,
-  imgFileName,
-  className,
-}: TSkillContents & ComponentProps<'div'>) {
-  const { setTarget } = useIntersectionOpacity();
+  skill: { title, descriptions, imgFileName },
+}: {
+  skill: TSkillContent;
+}) {
   return (
-    <div ref={setTarget} className={'opacity-0 ' + className}>
+    <div>
       <Image
         width={110}
         height={110}
@@ -26,7 +22,7 @@ function Skill({
         {descriptions.map((description, idx) => (
           <p
             key={`${title}-${idx}`}
-            className="text-xl font-semibold leading-normal text-[#797d89]"
+            className="text-xl font-medium leading-normal text-[#797d89]"
           >
             {description}
           </p>

@@ -47,15 +47,4 @@ export function useSectionObserver({ sectionId }: { sectionId: string }) {
   });
 }
 
-export function useIntersectionOpacity() {
-  const onIntersect = (entry: IntersectionObserverEntry | undefined) => {
-    entry?.target.classList.add('animate-opacity');
-  };
-
-  return useIntersection({
-    onIntersect,
-    options: { rootMargin: '0px 0px -25% 0px', threshold: 0 },
-  });
-}
-
 export default useIntersection;
