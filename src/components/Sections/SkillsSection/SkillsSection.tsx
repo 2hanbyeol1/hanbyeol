@@ -1,33 +1,27 @@
-import { SKILL_CONTENTS } from '@/constants/contents';
+import SlideInView from '@/components/SlideInView';
 import { SECTION_ID } from '@/constants/section';
-import { useSectionObserver } from '@/hooks/useIntersection';
+import { SKILL_CONTENTS } from '@/data/skill';
+import SectionWrapper from '../SectionWrapper';
 import Skill from './Skill';
 
 function SkillsSection() {
-  const { setTarget } = useSectionObserver({
-    sectionId: SECTION_ID.skills,
-  });
-
   return (
-    <section
-      id={SECTION_ID.skills}
-      ref={setTarget}
+    <SectionWrapper
+      sectionId={SECTION_ID.skills}
       className="mt-60 scroll-mt-36"
     >
-      <ul className="relative mx-auto grid w-full max-w-[58rem] grid-cols-1 gap-x-20 gap-y-40 px-8 tablet:grid-cols-2">
+      <div className="relative mx-auto grid w-full max-w-[58rem] grid-cols-1 gap-x-20 gap-y-40 px-8 tablet:grid-cols-2">
         <div className="absolute -left-32 -top-32 aspect-square w-full max-w-[30rem] rounded-full bg-primary/30 blur-[220px]"></div>
-        {SKILL_CONTENTS.map(({ title, descriptions, imgFileName }, idx) => (
-          <li key={title}>
-            <Skill
-              className={idx % 2 === 0 ? '' : 'animate-delay'}
-              title={title}
-              descriptions={descriptions}
-              imgFileName={imgFileName}
-            />
-          </li>
+        {SKILL_CONTENTS.map((skill, idx) => (
+          <SlideInView
+            key={`ski-${skill.title}`}
+            className={idx % 2 === 0 ? '' : 'animate-delay'}
+          >
+            <Skill skill={skill} />
+          </SlideInView>
         ))}
-      </ul>
-    </section>
+      </div>
+    </SectionWrapper>
   );
 }
 export default SkillsSection;

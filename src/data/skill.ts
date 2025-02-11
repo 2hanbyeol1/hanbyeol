@@ -1,10 +1,10 @@
-export interface TSkillContents {
+export interface TSkillContent {
   title: string;
   descriptions: string[];
   imgFileName: string;
 }
 
-export const SKILL_CONTENTS: TSkillContents[] = [
+export const SKILL_CONTENTS: TSkillContent[] = [
   {
     title: 'HTML & CSS',
     descriptions: [

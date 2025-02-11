@@ -1,3 +1,4 @@
+'use client';
 import { SECTION_ID } from '@/constants/section';
 import useActiveIndexStore from '@/stores/useActiveSectionIdStore';
 import { capitalize } from '@/utils/util';

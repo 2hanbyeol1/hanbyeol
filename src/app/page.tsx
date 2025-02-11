@@ -1,4 +1,3 @@
-'use client';
 import Header from '@/components/Header';
 import ContactSection from '@/components/Sections/ContactSection';
 import ExperiencesSection from '@/components/Sections/ExperiencesSection';
