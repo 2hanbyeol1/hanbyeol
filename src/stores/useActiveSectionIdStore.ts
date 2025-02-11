@@ -1,13 +1,19 @@
-import { SECTION_ID } from '@/constants/section';
 import { create } from 'zustand';
 
+export type TSectionId =
+  | 'intro'
+  | 'skills'
+  | 'experiences'
+  | 'projects'
+  | 'contact';
+
 interface TActiveSectionIdStore {
-  activeSectionId: string;
-  setActiveIndex: (newActiveIndex: string) => void;
+  activeSectionId: TSectionId;
+  setActiveIndex: (newActiveSectionId: TSectionId) => void;
 }
 
 const useActiveIndexStore = create<TActiveSectionIdStore>((set) => ({
-  activeSectionId: SECTION_ID.intro,
+  activeSectionId: 'intro',
   setActiveIndex: (newActiveSectionId) =>
     set({ activeSectionId: newActiveSectionId }),
 }));

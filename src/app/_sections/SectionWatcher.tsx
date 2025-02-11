@@ -1,13 +1,15 @@
 'use client';
 import useIntersection from '@/hooks/useIntersection';
-import useActiveIndexStore from '@/stores/useActiveSectionIdStore';
+import useActiveIndexStore, {
+  TSectionId,
+} from '@/stores/useActiveSectionIdStore';
 import { ComponentProps } from 'react';
 
-function SectionWrapper({
+function SectionWatcher({
   sectionId,
   children,
   className,
-}: { sectionId: string } & ComponentProps<'section'>) {
+}: { sectionId: TSectionId } & ComponentProps<'section'>) {
   const setActiveIndex = useActiveIndexStore((state) => state.setActiveIndex);
 
   const onIntersect = () => {
@@ -25,4 +27,4 @@ function SectionWrapper({
     </section>
   );
 }
-export default SectionWrapper;
+export default SectionWatcher;

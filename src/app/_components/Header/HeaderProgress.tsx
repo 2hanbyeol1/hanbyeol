@@ -22,7 +22,7 @@ function HeaderProgress() {
     <>
       <div
         style={{ width: `${progress}%` }}
-        className="z-10 h-2 bg-primary2 px-2 max-tablet:hidden"
+        className="z-10 h-1 bg-primary2 px-2 max-tablet:hidden"
       ></div>
       <div
         style={{ height: `${progress}%` }}

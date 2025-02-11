@@ -32,10 +32,10 @@ function Experience({
             alt="별"
             className="absolute right-0 -z-10 tablet:-left-10 tablet:top-1"
           />
-          <h3 className="mb-1 text-2xl font-bold">{title}</h3>
+          <h3 className="mb-1 text-[1.7rem] font-bold">{title}</h3>
           <h4 className="text-lg font-medium">{subtitle}</h4>
         </div>
-        <p>{description}</p>
+        <p className="leading-normal">{description}</p>
       </div>
       <div>
         <h5 className="mb-2 font-semibold">주요 활동</h5>

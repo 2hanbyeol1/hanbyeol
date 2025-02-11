@@ -1,9 +1,9 @@
-import Header from '@/components/Header';
-import ContactSection from '@/components/Sections/ContactSection';
-import ExperiencesSection from '@/components/Sections/ExperiencesSection';
-import IntroSection from '@/components/Sections/IntroSection';
-import ProjectsSection from '@/components/Sections/ProjectsSection';
-import SkillsSection from '@/components/Sections/SkillsSection';
+import Header from '@/app/_components/Header';
+import ContactSection from '@/app/_sections/ContactSection';
+import ExperiencesSection from '@/app/_sections/ExperiencesSection';
+import IntroSection from '@/app/_sections/IntroSection';
+import ProjectsSection from '@/app/_sections/ProjectsSection';
+import SkillsSection from '@/app/_sections/SkillsSection';
 
 function Page() {
   return (
