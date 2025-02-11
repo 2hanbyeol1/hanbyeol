@@ -1,4 +1,4 @@
-import { TExperienceContent } from '@/data/experience';
+import { TExperience } from '@/data/experience';
 import { parseDateToYYYYMM } from '@/utils/util';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ function Experience({
     links,
   },
 }: {
-  experience: TExperienceContent;
+  experience: TExperience;
 }) {
   return (
     <div className="flex flex-col gap-10">

@@ -2,7 +2,7 @@
 import useIntersection from '@/hooks/useIntersection';
 import { ComponentProps } from 'react';
 
-function SlideInView({ children, className }: ComponentProps<'div'>) {
+function SlideInView({ children, className = '' }: ComponentProps<'div'>) {
   const onIntersect = (entry: IntersectionObserverEntry | undefined) => {
     entry?.target.classList.add('animate-opacity');
   };

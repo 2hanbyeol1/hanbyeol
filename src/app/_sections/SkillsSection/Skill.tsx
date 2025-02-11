@@ -1,10 +1,10 @@
-import { TSkillContent } from '@/data/skill';
+import { TSkill } from '@/data/skill';
 import Image from 'next/image';
 
 function Skill({
   skill: { title, descriptions, imgFileName },
 }: {
-  skill: TSkillContent;
+  skill: TSkill;
 }) {
   return (
     <div>

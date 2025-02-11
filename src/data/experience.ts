@@ -1,4 +1,4 @@
-export interface TExperienceContent {
+export interface TExperience {
   title: string;
   subtitle: string;
   duration: [Date, Date];
@@ -8,7 +8,7 @@ export interface TExperienceContent {
   links?: { text: string; url: string }[];
 }
 
-export const EXPERIENCE_CONTENTS: TExperienceContent[] = [
+export const EXPERIENCE_CONTENTS: TExperience[] = [
   {
     title: 'SearcHRight AI',
     subtitle: '프론트엔드 개발 인턴',
