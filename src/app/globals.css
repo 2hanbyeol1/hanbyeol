@@ -5,22 +5,3 @@
 * {
   @apply leading-none text-dark;
 }
-
-@keyframes opacity {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-opacity {
-  animation: 0.7s opacity ease-in-out forwards;
-}
-
-.animate-delay {
-  animation-delay: 0.5s;
-}

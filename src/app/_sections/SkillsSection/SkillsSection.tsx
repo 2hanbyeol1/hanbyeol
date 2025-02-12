@@ -11,7 +11,7 @@ function SkillsSection() {
         {SKILL_CONTENTS.map((skill, idx) => (
           <SlideInView
             key={`ski-${skill.title}`}
-            className={idx % 2 === 0 ? '' : 'animate-delay'}
+            delay={idx % 2 === 0 ? 0 : 0.5}
           >
             <Skill skill={skill} />
           </SlideInView>

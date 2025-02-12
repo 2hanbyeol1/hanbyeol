@@ -1,8 +1,8 @@
 'use client';
-import useIntersection from '@/hooks/useIntersection';
 import useActiveIndexStore, {
   TSectionId,
 } from '@/stores/useActiveSectionIdStore';
+import { motion } from 'motion/react';
 import { ComponentProps } from 'react';
 
 function SectionWatcher({
@@ -10,21 +10,29 @@ function SectionWatcher({
   children,
   className,
 }: { sectionId: TSectionId } & ComponentProps<'section'>) {
-  const setActiveIndex = useActiveIndexStore((state) => state.setActiveIndex);
+  const activate = useActiveIndexStore((state) => state.activate);
+  const deactivate = useActiveIndexStore((state) => state.deactivate);
 
-  const onIntersect = () => {
-    setActiveIndex(sectionId);
+  const onViewportEnter = () => {
+    console.log(sectionId + 'entered');
+    activate(sectionId);
   };
 
-  const { setTarget } = useIntersection({
-    onIntersect,
-    options: { rootMargin: '-58% 0px -40%', threshold: 0 },
-  });
+  const onViewportLeave = () => {
+    console.log(sectionId + 'leaved');
+    deactivate(sectionId);
+  };
 
   return (
-    <section id={sectionId} ref={setTarget} className={className}>
+    <motion.section
+      id={sectionId}
+      className={className}
+      onViewportEnter={onViewportEnter}
+      onViewportLeave={onViewportLeave}
+      viewport={{ margin: '0px 0px -10%' }}
+    >
       {children}
-    </section>
+    </motion.section>
   );
 }
 export default SectionWatcher;

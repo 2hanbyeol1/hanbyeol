@@ -1,33 +1,23 @@
 'use client';
-import useScrollProgress from '@/hooks/useScrollProgress';
-import useThrottle from '@/hooks/useThrottle';
-import { useEffect } from 'react';
+import { motion, useScroll } from 'motion/react';
 
 function HeaderProgress() {
-  const { progress, handleScroll } = useScrollProgress();
-  const throttleOnScroll = useThrottle(handleScroll, 30);
-
-  useEffect(() => {
-    handleScroll();
-    window.addEventListener('scroll', () => {
-      throttleOnScroll();
-    });
-    return () => {
-      window.removeEventListener('scroll', () => {});
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { scrollYProgress } = useScroll();
 
   return (
     <>
-      <div
-        style={{ width: `${progress}%` }}
-        className="z-10 h-1 bg-primary2 px-2 max-tablet:hidden"
-      ></div>
-      <div
-        style={{ height: `${progress}%` }}
-        className="z-10 w-1 bg-primary2 py-2 tablet:hidden"
-      ></div>
+      <motion.div
+        style={{
+          scaleX: scrollYProgress,
+        }}
+        className="z-10 h-1 origin-left bg-primary2 max-tablet:hidden"
+      ></motion.div>
+      <motion.div
+        style={{
+          scaleY: scrollYProgress,
+        }}
+        className="z-10 w-1 origin-top bg-primary2 tablet:hidden"
+      ></motion.div>
     </>
   );
 }

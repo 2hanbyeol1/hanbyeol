@@ -9,13 +9,22 @@ export type TSectionId =
 
 interface TActiveSectionIdStore {
   activeSectionId: TSectionId;
-  setActiveIndex: (newActiveSectionId: TSectionId) => void;
+  activate: (sectionId: TSectionId) => void;
+  deactivate: (sectionId: TSectionId) => void;
 }
+
+const activeSections = new Set<TSectionId>();
 
 const useActiveIndexStore = create<TActiveSectionIdStore>((set) => ({
   activeSectionId: 'intro',
-  setActiveIndex: (newActiveSectionId) =>
-    set({ activeSectionId: newActiveSectionId }),
+  activate: (sectionId) => {
+    activeSections.add(sectionId);
+    set({ activeSectionId: sectionId });
+  },
+  deactivate: (sectionId) => {
+    activeSections.delete(sectionId);
+    set({ activeSectionId: [...activeSections.values()][0] });
+  },
 }));
 
 export default useActiveIndexStore;

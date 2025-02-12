@@ -1,21 +1,30 @@
 'use client';
-import useIntersection from '@/hooks/useIntersection';
+import { motion } from 'motion/react';
 import { ComponentProps } from 'react';
 
-function SlideInView({ children, className = '' }: ComponentProps<'div'>) {
-  const onIntersect = (entry: IntersectionObserverEntry | undefined) => {
-    entry?.target.classList.add('animate-opacity');
-  };
+interface SlideInViewProps {
+  delay?: number;
+}
 
-  const { setTarget } = useIntersection({
-    onIntersect,
-    options: { rootMargin: '0px 0px -10% 0px', threshold: 0 },
-  });
-
+function SlideInView({
+  children,
+  delay = 0,
+}: SlideInViewProps & ComponentProps<'div'>) {
   return (
-    <div ref={setTarget} className={`opacity-0 ${className}`}>
+    <motion.div
+      initial={{ opacity: 0, translateY: 30 }}
+      whileInView={{
+        opacity: 1,
+        translateY: 0,
+        transition: {
+          duration: 1,
+          delay,
+        },
+      }}
+      viewport={{ once: true, amount: 0.9 }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }
 
