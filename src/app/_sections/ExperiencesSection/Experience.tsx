@@ -1,4 +1,4 @@
-import { TExperience } from '@/data/experience';
+import { TExperience } from '@/app/_data/experience';
 import { parseDateToYYYYMM } from '@/utils/util';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,54 +17,64 @@ function Experience({
   experience: TExperience;
 }) {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-12">
       <div>
-        <div className="mb-2.5 text-base text-dark2">
+        <div className="mb-2 text-xl font-medium [&>span]:text-dark2">
           <span>{parseDateToYYYYMM(duration[0])}</span>
           <span> - </span>
           <span>{parseDateToYYYYMM(duration[1])}</span>
         </div>
-        <div className="relative mb-5">
+        <div className="relative">
           <Image
-            width={20}
-            height={20}
+            width={32}
+            height={32}
             src="/image/star.png"
             alt="별"
-            className="absolute right-0 -z-10 tablet:-left-10 tablet:top-1"
+            className="absolute right-0 -z-10 tablet:-left-14 tablet:top-1"
           />
-          <h3 className="mb-1 text-[1.7rem] font-bold">{title}</h3>
-          <h4 className="text-lg font-medium">{subtitle}</h4>
+          <h3 className="mb-1.5 text-3xl font-bold">{title}</h3>
+          <h4 className="text-2xl font-medium">{subtitle}</h4>
         </div>
-        <p className="leading-normal">{description}</p>
+        {description ? (
+          <p className="mt-4 text-lg leading-normal">&gt; {description}</p>
+        ) : (
+          <></>
+        )}
       </div>
       <div>
-        <h5 className="mb-2 font-semibold">주요 활동</h5>
+        <h5 className="mb-2 text-xl font-bold">주요 활동</h5>
         <ul>
           {activities.map((activity, idx) => (
-            <li key={`act-${title}-${idx}`} className="leading-relaxed">
-              {activity}
-            </li>
+            <li
+              key={`act-${title}-${idx}`}
+              className="text-lg [&>b]:font-semibold"
+              dangerouslySetInnerHTML={{ __html: activity }}
+            />
           ))}
         </ul>
       </div>
       <div>
-        <h5 className="mb-2 font-semibold">성과</h5>
+        <h5 className="mb-2 text-xl font-bold">성과</h5>
         <ul>
           {achievements.map((achievement, idx) => (
-            <li key={`ach-${title}-${idx}`} className="leading-relaxed">
-              {achievement}
-            </li>
+            <li
+              key={`ach-${title}-${idx}`}
+              className="text-lg [&>b]:font-bold [&>b]:text-primary/80"
+              dangerouslySetInnerHTML={{ __html: achievement }}
+            />
           ))}
         </ul>
       </div>
       {links && links.length > 0 ? (
         <div>
-          <ul>
+          <h5 className="mb-2 text-xl font-bold">참조</h5>
+          <ul className="flex flex-col gap-1">
             {links.map((link, idx) => (
-              <li key={`lin-${title}-${idx}`}>
-                <Link href={link.url} className="text-primary underline">
-                  {link.text}
-                </Link>
+              <li
+                key={`lin-${title}-${idx}`}
+                className="text-lg text-dark2 underline"
+              >
+                <Link href={link.url}>{link.text}</Link>
               </li>
             ))}
           </ul>

@@ -1,5 +1,5 @@
 import SlideInView from '@/app/_components/SlideInView';
-import { EXPERIENCE_CONTENTS } from '@/data/experience';
+import { EXPERIENCE_CONTENTS } from '@/app/_data/experience';
 import SectionWatcher from '../SectionWatcher';
 import Experience from './Experience';
 

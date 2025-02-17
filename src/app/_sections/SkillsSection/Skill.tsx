@@ -1,4 +1,4 @@
-import { TSkill } from '@/data/skill';
+import { TSkill } from '@/app/_data/skill';
 import Image from 'next/image';
 
 function Skill({
@@ -22,10 +22,9 @@ function Skill({
         {descriptions.map((description, idx) => (
           <p
             key={`${title}-${idx}`}
-            className="text-xl font-medium leading-normal text-[#797d89]"
-          >
-            {description}
-          </p>
+            className="text-xl font-medium leading-normal text-dark3 [&>b]:font-bold [&>b]:text-dark2"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         ))}
       </div>
     </div>
