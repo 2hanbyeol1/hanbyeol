@@ -1,5 +1,5 @@
 import { TExperience } from '@/app/_data/experience';
-import { parseDateToYYYYMM } from '@/utils/util';
+import { parseDateToAriaLabel, parseDateToYYYYMM } from '@/utils/util';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,9 +19,12 @@ function Experience({
   return (
     <div className="flex flex-col gap-12">
       <div>
-        <div className="mb-2 text-xl font-medium [&>span]:text-dark2">
+        <div
+          className="mb-2 text-xl font-medium [&>span]:text-dark2"
+          aria-label={`${parseDateToAriaLabel(duration[0])}부터 ${parseDateToAriaLabel(duration[1])}까지`}
+        >
           <span>{parseDateToYYYYMM(duration[0])}</span>
-          <span> - </span>
+          <span aria-hidden> - </span>
           <span>{parseDateToYYYYMM(duration[1])}</span>
         </div>
         <div className="relative">
@@ -31,12 +34,15 @@ function Experience({
             src="/image/star.png"
             alt="별"
             className="absolute right-0 -z-10 tablet:-left-14 tablet:top-1"
+            aria-hidden
           />
           <h3 className="mb-1.5 text-3xl font-bold">{title}</h3>
           <h4 className="text-2xl font-medium">{subtitle}</h4>
         </div>
         {description ? (
-          <p className="mt-4 text-lg leading-normal">&gt; {description}</p>
+          <p className="mt-4 text-lg leading-normal">
+            <span aria-hidden>&gt;</span> {description}
+          </p>
         ) : (
           <></>
         )}

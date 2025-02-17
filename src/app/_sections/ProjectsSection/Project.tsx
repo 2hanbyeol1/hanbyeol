@@ -1,5 +1,5 @@
 import { TProject } from '@/app/_data/project';
-import { parseDateToYYYYMM } from '@/utils/util';
+import { parseDateToAriaLabel, parseDateToYYYYMM } from '@/utils/util';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -20,7 +20,7 @@ function Project({
           width={60}
           height={60}
           src={`/image/projects/${id}.png`}
-          alt={title}
+          alt={`${title} 로고`}
           className="h-auto duration-100 group-hover/project:scale-125"
         />
       </div>
@@ -34,9 +34,12 @@ function Project({
             ))
           : description}
       </p>
-      <div className="mb-5 [&>span]:text-dark2">
+      <div
+        className="mb-5 [&>span]:text-dark2"
+        aria-label={`${parseDateToAriaLabel(duration[0])}부터 ${parseDateToAriaLabel(duration[1])}까지`}
+      >
         <span>{parseDateToYYYYMM(duration[0])}</span>
-        <span> - </span>
+        <span aria-hidden> - </span>
         <span>{parseDateToYYYYMM(duration[1])}</span>
       </div>
       <div className="flex gap-2.5">
@@ -50,6 +53,7 @@ function Project({
             />
             <span
               className="hover absolute left-1/2 top-[140%] hidden -translate-x-1/2 whitespace-nowrap rounded-sm bg-black/50 px-2 py-1 text-white group-hover/skill:block"
+              role="tooltip"
               aria-label={`사용된 기술: ${skill}`}
             >
               {skill}

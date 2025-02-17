@@ -27,11 +27,11 @@ function ProjectsSection() {
   };
 
   return (
-    <SectionWatcher sectionId="projects">
+    <SectionWatcher sectionId="projects" className="mt-64 pt-96">
       <div
         ref={projectsRef}
         style={{ height: `${PROJECT_COUNT * 40}rem` }}
-        className="mt-[32rem] h-[320rem] px-8"
+        className="h-[320rem] px-8"
       >
         <div className="sticky top-1/2 mx-auto w-full max-w-[64rem] -translate-y-1/2 overflow-hidden px-8">
           <Checkbox

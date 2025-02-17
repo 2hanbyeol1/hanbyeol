@@ -56,7 +56,7 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
     ],
     achievements: [
       '오픈소스에 기여할 수 있는 역량을 키우기 위한 목표 수립',
-      '    → 아카데미에서의 학습을 바탕으로 <b>오픈소스 가상 화이트보드 `excalidraw`에 기여</b>',
+      '→ 아카데미에서의 학습을 바탕으로 <b>오픈소스 가상 화이트보드 `excalidraw`에 기여</b>',
     ],
     links: [
       {

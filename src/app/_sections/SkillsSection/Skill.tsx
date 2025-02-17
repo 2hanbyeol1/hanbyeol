@@ -12,7 +12,7 @@ function Skill({
         width={110}
         height={110}
         src={`/image/skills/${imgFileName}.png`}
-        alt={imgFileName}
+        alt={`${imgFileName} 아이콘`}
         className="mb-10 rounded-md max-tablet:mx-auto"
       />
       <h3 className="mb-5 text-3xl font-bold max-tablet:text-center">
