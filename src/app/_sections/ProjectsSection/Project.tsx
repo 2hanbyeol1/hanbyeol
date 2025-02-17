@@ -48,7 +48,10 @@ function Project({
               src={`/image/skills/${skill === 'react-native' ? 'react' : skill}.png`}
               alt={skill}
             />
-            <span className="hover absolute left-1/2 top-[140%] hidden -translate-x-1/2 whitespace-nowrap rounded-sm bg-black/50 px-2 py-1 text-white group-hover/skill:block">
+            <span
+              className="hover absolute left-1/2 top-[140%] hidden -translate-x-1/2 whitespace-nowrap rounded-sm bg-black/50 px-2 py-1 text-white group-hover/skill:block"
+              aria-label={`사용된 기술: ${skill}`}
+            >
               {skill}
             </span>
           </div>
