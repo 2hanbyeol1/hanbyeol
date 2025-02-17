@@ -11,21 +11,21 @@ function Project({
   return (
     <Link
       href={`/project/${id}`}
-      className="group/project flex w-80 -translate-x-1/2 flex-col items-center duration-100 hover:translate-y-3"
+      className="group/project flex w-64 -translate-x-1/2 flex-col items-center duration-100 hover:translate-y-3"
     >
       <div
         className={`mb-5 flex aspect-square items-center justify-center rounded-md p-5 shadow-lg shadow-dark/15 ${bgDark ? 'bg-black' : ''}`}
       >
         <Image
           width={60}
-          height={0}
+          height={60}
           src={`/image/projects/${id}.png`}
           alt={title}
           className="h-auto duration-100 group-hover/project:scale-125"
         />
       </div>
       <h3 className="mb-2 text-2xl font-bold">{title}</h3>
-      <p className="mx-4 mb-5 h-12 text-center text-lg">
+      <p className="mb-5 line-clamp-2 h-12 text-center text-lg">
         {Array.isArray(description)
           ? description.map((desc, idx) => (
               <span key={`${id}-desc-${idx}`} className="block leading-normal">

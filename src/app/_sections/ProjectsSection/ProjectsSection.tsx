@@ -42,7 +42,7 @@ function ProjectsSection() {
             text="메인 프로젝트만"
           />
           <motion.ul
-            className="relative left-1/2 flex flex-nowrap py-20"
+            className="relative left-1/2 flex flex-nowrap gap-10 py-20"
             style={{ x }}
           >
             {PROJECT_CONTENTS.filter(

@@ -14,12 +14,10 @@ function SectionWatcher({
   const deactivate = useActiveIndexStore((state) => state.deactivate);
 
   const onViewportEnter = () => {
-    console.log(sectionId + 'entered');
     activate(sectionId);
   };
 
   const onViewportLeave = () => {
-    console.log(sectionId + 'leaved');
     deactivate(sectionId);
   };
 
