@@ -24,7 +24,7 @@ export default {
         primary5: '#F5F5F5',
         dark: '#293259',
         dark2: '#676A75',
-        dark3: '#A6ACC2',
+        dark3: '#797d89',
         dark4: '#D7DBEB',
       },
       keyframes: {
