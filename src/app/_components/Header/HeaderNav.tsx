@@ -1,8 +1,8 @@
 'use client';
 import useActiveIndexStore, {
   TSectionId,
-} from '@/stores/useActiveSectionIdStore';
-import { capitalize } from '@/utils/util';
+} from '@/app/_stores/useActiveSectionIdStore';
+import { capitalize } from '@/app/_utils/util';
 import Link from 'next/link';
 
 const NAV_ITEMS: TSectionId[] = [

@@ -52,8 +52,8 @@ export const SKILL_CONTENTS: TSkill[] = [
   {
     title: 'Next.js',
     descriptions: [
-      '<b>CSR, SSR, SSG, ISR의 동작원리에 대해 이해</b>하고 있습니다.',
-      'Next.js의 라우팅, API 라우트, 이미지 최적화 등 다양한 기능을 활용하여 <b>성능 및 SEO에 최적화된 웹 애플리케이션을 개발</b>합니다.',
+      '<b>CSR, SSR, SSG, ISR 렌더링 방식에 대해 이해</b>하고 적합한 상황에서 사용할 수 있습니다.',
+      'Next.js의 다양한 기능을 활용하여 <b>성능 및 SEO에 최적화된 웹 애플리케이션을 개발</b>합니다.',
     ],
     imgFileName: 'next',
   },

@@ -1,20 +1,26 @@
 'use client';
-
+import useModal from '@/app/_stores/useModal';
 import Image from 'next/image';
 
 function EmailCopyButton() {
+  const openModal = useModal((state) => state.openModal);
   const EMAIL = '2hanbyeol1@naver.com';
 
   const handleButtonClick = () => {
     navigator.clipboard
       .writeText(EMAIL)
       .then(() => {
-        alert('이메일이 클립보드에 복사되었습니다!');
+        openModal({
+          content: <SuccessModalContent />,
+          duration: 2,
+        });
       })
       .catch(() => {
-        alert(
-          '이메일을 클립보드에 복사하는 중 에러가 발생했습니다. CTRL + C를 사용해주세요.',
-        );
+        openModal({
+          content:
+            '이메일을 클립보드에 복사하는 중 에러가 발생했습니다. CTRL + C를 사용해주세요.',
+          duration: 4,
+        });
       });
   };
 
@@ -33,6 +39,34 @@ function EmailCopyButton() {
       />
       {EMAIL}
     </button>
+  );
+}
+
+function SuccessModalContent() {
+  return (
+    <div className="flex flex-col items-center gap-5">
+      <div className="animate-scaleUp flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="white"
+          className="p-1.5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={4}
+            d="M5 13l4 4L19 7"
+            className="animate-check"
+          />
+        </svg>
+      </div>
+      <p className="text-xl">
+        이메일이 <span className="text-bold">클립보드에 복사</span>
+        되었습니다!
+      </p>
+    </div>
   );
 }
 export default EmailCopyButton;

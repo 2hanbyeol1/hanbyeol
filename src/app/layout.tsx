@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Modal from './_components/Modal/Modal';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${pretendard.variable} scroll-smooth`}>
-      <body className="font-pretendard">{children}</body>
+      <body className="font-pretendard">
+        {children}
+        <Modal />
+      </body>
     </html>
   );
 }

@@ -1,3 +1,4 @@
+import { CONTACT_LINKS } from '@/app/_data/contact';
 import Image from 'next/image';
 import SectionWatcher from '../SectionWatcher';
 import ContactButton from './ContactButton';
@@ -22,13 +23,9 @@ function ContactSection() {
           <EmailCopyButton />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <ContactButton href="/file/resume.pdf" text="Resume" />
-          <ContactButton
-            href="https://www.linkedin.com/in/%ED%95%9C%EB%B3%84-%EC%9D%B4-07362b2a6/"
-            text="Linked In"
-          />
-          <ContactButton href="https://github.com/2hanbyeol1" text="Github" />
-          <ContactButton href="https://velog.io/@2hanbyeol1" text="Velog" />
+          {CONTACT_LINKS.map(({ href, text }) => (
+            <ContactButton key={href} href={href} text={text} />
+          ))}
         </div>
       </div>
     </SectionWatcher>

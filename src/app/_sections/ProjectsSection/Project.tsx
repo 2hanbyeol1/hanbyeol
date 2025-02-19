@@ -1,5 +1,5 @@
 import { TProject } from '@/app/_data/project';
-import { parseDateToAriaLabel, parseDateToYYYYMM } from '@/utils/util';
+import { parseDateToAriaLabel, parseDateToYYYYMM } from '@/app/_utils/util';
 import Image from 'next/image';
 import Link from 'next/link';
 

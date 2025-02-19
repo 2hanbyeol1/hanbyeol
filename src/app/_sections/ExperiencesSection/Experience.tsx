@@ -1,5 +1,5 @@
 import { TExperience } from '@/app/_data/experience';
-import { parseDateToAriaLabel, parseDateToYYYYMM } from '@/utils/util';
+import { parseDateToAriaLabel, parseDateToYYYYMM } from '@/app/_utils/util';
 import Image from 'next/image';
 import Link from 'next/link';
 

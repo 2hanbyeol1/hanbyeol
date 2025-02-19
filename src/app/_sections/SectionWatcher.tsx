@@ -1,7 +1,7 @@
 'use client';
 import useActiveIndexStore, {
   TSectionId,
-} from '@/stores/useActiveSectionIdStore';
+} from '@/app/_stores/useActiveSectionIdStore';
 import { motion } from 'motion/react';
 import { ComponentProps } from 'react';
 

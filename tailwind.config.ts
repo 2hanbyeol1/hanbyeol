@@ -32,9 +32,14 @@ export default {
           '0%, 100%': { transform: 'rotate(0deg)' },
           '50%': { transform: 'rotate(9deg)' },
         },
+        check: {
+          '0%': { strokeDashoffset: '100', strokeDasharray: '100' },
+          '100%': { strokeDashoffset: '0' },
+        },
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
+        check: 'check 2s ease forwards',
       },
     },
   },
