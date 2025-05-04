@@ -26,7 +26,7 @@ function EmailCopyButton() {
 
   return (
     <button
-      className="flex items-center text-3xl text-primary hover:underline"
+      className="flex items-center text-2xl text-primary hover:underline"
       onClick={handleButtonClick}
       aria-label="이메일 클립보드 복사 버튼"
     >

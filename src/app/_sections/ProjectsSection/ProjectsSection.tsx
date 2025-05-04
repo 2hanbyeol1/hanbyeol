@@ -12,7 +12,7 @@ function ProjectsSection() {
   const { scrollYProgress } = useScroll({
     target: projectsRef,
   });
-  const PROJECT_COUNT = isMainChecked ? 5 : PROJECT_CONTENTS.length;
+  const PROJECT_COUNT = isMainChecked ? PROJECT_CONTENTS.filter((content) => content.isMain).length : PROJECT_CONTENTS.length;
 
   const x = useTransform(
     scrollYProgress,

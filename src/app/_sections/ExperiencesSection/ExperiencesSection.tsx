@@ -9,7 +9,7 @@ function ExperiencesSection() {
       sectionId="experiences"
       className="mt-64 scroll-mt-36 pt-60"
     >
-      <div className="mx-auto flex w-full max-w-[58rem] flex-col gap-44 px-16 max-tablet:px-8">
+      <div className="mx-auto flex w-full max-w-[58rem] flex-col gap-44 px-20 max-tablet:px-8">
         {EXPERIENCE_CONTENTS.map((experience) => (
           <SlideInView key={`exp-${experience.title}`}>
             <Experience experience={experience} />

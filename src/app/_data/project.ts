@@ -92,4 +92,12 @@ export const PROJECT_CONTENTS: TProject[] = [
     mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
     isMain: true,
   },
+  {
+    id: 'talix',
+    title: '탤릭스',
+    description: ['경험 태그를 통한 인재 검색,', 'SaaS 프로덕트'],
+    duration: [new Date('2025.01'), new Date('2025.02')],
+    mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
+    isMain: true,
+  },
 ];

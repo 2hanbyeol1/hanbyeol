@@ -64,6 +64,10 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
         url: 'https://velog.io/@2hanbyeol1/series/Git',
       },
       {
+        text: '[Github] Walktour - (OPEN) props에 대한 설명 추가',
+        url: 'https://github.com/alfrdmalr/walktour/pull/146'
+      },
+      {
         text: '[Github] Excalidraw - (CLOSED) 한국어용 손글씨 폰트 추가',
         url: 'https://github.com/excalidraw/excalidraw/pull/8531',
       },
