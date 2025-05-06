@@ -9,15 +9,13 @@ function Skill({
   return (
     <div>
       <Image
-        width={110}
-        height={110}
+        width={100}
+        height={100}
         src={`/image/skills/${imgFileName}.png`}
         alt={`${imgFileName} 아이콘`}
-        className="mb-10 rounded-md max-tablet:mx-auto"
+        className="mb-10 rounded-md"
       />
-      <h3 className="mb-5 text-3xl font-bold max-tablet:text-center">
-        {title}
-      </h3>
+      <h3 className="mb-5 text-3xl font-bold">{title}</h3>
       <div className="flex flex-col gap-3">
         {descriptions.map((description, idx) => (
           <p

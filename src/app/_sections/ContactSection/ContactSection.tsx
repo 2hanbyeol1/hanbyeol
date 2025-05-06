@@ -1,13 +1,14 @@
 import { CONTACT_LINKS } from '@/app/_data/contact';
 import Image from 'next/image';
 import SectionWatcher from '../SectionWatcher';
-import ContactButton from './ContactButton';
 import EmailCopyButton from './EmailCopyButton';
+import { TSectionId } from '@/app/_stores/useActiveSectionIdStore';
+import Button from '@/app/_components/Button/Button';
 
 function ContactSection() {
   return (
     <SectionWatcher
-      sectionId="contact"
+      sectionId={TSectionId.CONTACT}
       className="flex h-screen w-full items-center justify-center"
     >
       <div className="flex flex-col gap-7">
@@ -24,7 +25,16 @@ function ContactSection() {
         </div>
         <div className="grid grid-cols-4 gap-4">
           {CONTACT_LINKS.map(({ href, text }) => (
-            <ContactButton key={href} href={href} text={text} />
+            <Button
+              key={href}
+              href={href}
+              aria-label={`${text} - 새 탭에서 열기`}
+              rel="noopener noreferrer"
+              target="_blank"
+              theme="light"
+            >
+              {text}
+            </Button>
           ))}
         </div>
       </div>

@@ -1,11 +1,11 @@
 'use client';
-import useModal from '@/app/_stores/useModal';
+import useModalStore from '@/app/_stores/useModalStore';
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
 
 function Modal() {
-  const modalOption = useModal((state) => state.modalOptions);
-  const closeModal = useModal((state) => state.closeModal);
+  const modalOption = useModalStore((state) => state.modalOptions);
+  const closeModal = useModalStore((state) => state.closeModal);
 
   useEffect(() => {
     if (!modalOption || !modalOption?.duration) return;

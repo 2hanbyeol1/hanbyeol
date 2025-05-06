@@ -1,7 +1,7 @@
 export interface TExperience {
   title: string;
   subtitle: string;
-  duration: [Date, Date];
+  duration: [Date, Date][];
   description?: string;
   activities: string[];
   achievements: string[];
@@ -11,20 +11,32 @@ export interface TExperience {
 export const EXPERIENCE_CONTENTS: TExperience[] = [
   {
     title: 'SearcHRight AI',
-    subtitle: '프론트엔드 개발 인턴',
-    duration: [new Date('2024.09'), new Date('2024.11')],
+    subtitle: '프론트엔드 개발',
+    duration: [
+      [new Date('2024.09'), new Date('2024.11')],
+      [new Date('2025.02'), new Date('2025.04')],
+    ],
     description:
-      '서치라이트는 숨어있는 ‘인재’들의 역량을 분석하여 회사에 가장 적합한 후보자를 추천하는 솔루션을 개발하는 스타트업입니다.',
-    activities: ['<b>랜딩 페이지 개발</b>', '블로그 작성 및 업로드'],
+      '서치라이트는 숨어있는 ‘인재’들의 역량을 분석하여 회사에 가장 적합한 후보자를 추천하는 솔루션을 개발하는 스타트업입니다. TALIX는 경험 역량 태그를 이용해 인재를 검색할 수 있는 HR SaaS 프로덕트입니다.',
+    activities: [
+      '<b>랜딩 페이지 개발</b>',
+      '<b>SaaS 프로덕트 `talix` 기획, 디자인 및 개발</b>',
+      '블로그 작성 및 업로드',
+    ],
     achievements: [
+      '<b>0 to 1</b> 프로젝트 경험',
       '<b>실무</b> 경험',
       '<b>초기 스타트업</b> 경험',
       '<b>HR 도메인</b>에 대한 이해',
     ],
     links: [
       {
-        text: '[포트폴리오] 프로젝트 자세히 보기',
-        url: '/projects/searchright',
+        text: '[포트폴리오] 랜딩페이지 자세히 보기',
+        url: '/project/searchright',
+      },
+      {
+        text: '[포트폴리오] TALIX 자세히 보기',
+        url: '/project/talix',
       },
       {
         text: '[블로그] 서치라이트 일지',
@@ -35,7 +47,7 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
   {
     title: '내일배움캠프',
     subtitle: 'React 5기',
-    duration: [new Date('2024.04'), new Date('2024.08')],
+    duration: [[new Date('2024.04'), new Date('2024.08')]],
     activities: [
       '매일 <b>12시간 집중 학습</b> 및 TIL 작성',
       '<b>프로젝트 11개</b> 진행 (개인 5개, 팀 6개, 리더 3회)',
@@ -49,7 +61,7 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
   {
     title: '오픈소스 컨트리뷰션 아카데미',
     subtitle: 'Git 활용 및 React',
-    duration: [new Date('2023.07'), new Date('2023.08')],
+    duration: [[new Date('2023.07'), new Date('2023.08')]],
     activities: [
       '<b>Git, React, React Native 기초 학습</b>',
       '오픈소스 <b>`hyper`의 코드와 패키지 구조 분석</b>',
@@ -65,7 +77,7 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
       },
       {
         text: '[Github] Walktour - (OPEN) props에 대한 설명 추가',
-        url: 'https://github.com/alfrdmalr/walktour/pull/146'
+        url: 'https://github.com/alfrdmalr/walktour/pull/146',
       },
       {
         text: '[Github] Excalidraw - (CLOSED) 한국어용 손글씨 폰트 추가',

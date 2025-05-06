@@ -1,11 +1,12 @@
 import { create } from 'zustand';
 
-export type TSectionId =
-  | 'intro'
-  | 'skills'
-  | 'experiences'
-  | 'projects'
-  | 'contact';
+export enum TSectionId {
+  INTRO = 'intro',
+  SKILLS = 'skills',
+  EXPERIENCE = 'experience',
+  PROJECTS = 'projects',
+  CONTACT = 'contact',
+}
 
 interface TActiveSectionIdStore {
   activeSectionId: TSectionId;
@@ -16,7 +17,7 @@ interface TActiveSectionIdStore {
 const activeSections = new Set<TSectionId>();
 
 const useActiveIndexStore = create<TActiveSectionIdStore>((set) => ({
-  activeSectionId: 'intro',
+  activeSectionId: TSectionId.INTRO,
   activate: (sectionId) => {
     activeSections.add(sectionId);
     set({ activeSectionId: sectionId });

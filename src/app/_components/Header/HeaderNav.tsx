@@ -5,12 +5,12 @@ import useActiveIndexStore, {
 import { capitalize } from '@/app/_utils/util';
 import Link from 'next/link';
 
-const NAV_ITEMS: TSectionId[] = [
-  'intro',
-  'skills',
-  'experiences',
-  'projects',
-  'contact',
+export const NAV_ITEMS: TSectionId[] = [
+  TSectionId.INTRO,
+  TSectionId.SKILLS,
+  TSectionId.EXPERIENCE,
+  TSectionId.PROJECTS,
+  TSectionId.CONTACT,
 ];
 
 function HeaderNav() {

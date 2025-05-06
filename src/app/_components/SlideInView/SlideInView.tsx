@@ -3,11 +3,13 @@ import { motion } from 'motion/react';
 import { ComponentProps } from 'react';
 
 interface SlideInViewProps {
+  duration?: number;
   delay?: number;
 }
 
 function SlideInView({
   children,
+  duration = 0.7,
   delay = 0,
 }: SlideInViewProps & ComponentProps<'div'>) {
   return (
@@ -17,7 +19,7 @@ function SlideInView({
         opacity: 1,
         translateY: 0,
         transition: {
-          duration: 0.7,
+          duration,
           delay,
         },
       }}

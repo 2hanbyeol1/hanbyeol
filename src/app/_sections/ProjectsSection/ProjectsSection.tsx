@@ -1,10 +1,11 @@
 'use client';
-import Checkbox from '@/app/_components/Checkbox/Checkbox';
+import Checkbox from '@/app/_components/Checkbox';
 import { PROJECT_CONTENTS } from '@/app/_data/project';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
 import SectionWatcher from '../SectionWatcher';
 import Project from './Project';
+import { TSectionId } from '@/app/_stores/useActiveSectionIdStore';
 
 function ProjectsSection() {
   const [isMainChecked, setMainChecked] = useState<boolean>(true);
@@ -12,12 +13,15 @@ function ProjectsSection() {
   const { scrollYProgress } = useScroll({
     target: projectsRef,
   });
-  const PROJECT_COUNT = isMainChecked ? PROJECT_CONTENTS.filter((content) => content.isMain).length : PROJECT_CONTENTS.length;
+  const PROJECT_COUNT = isMainChecked
+    ? PROJECT_CONTENTS.filter((content) => content.isMain).length
+    : PROJECT_CONTENTS.length;
 
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, Math.min(0, -(320 * (PROJECT_COUNT - 1)))],
+    // [0, Math.min(0, -(320 * (PROJECT_COUNT - 1)))],
+    [0, Math.min(0, -(296 * (PROJECT_COUNT - 1)))],
   );
 
   const handleCheckboxChange = () => {
@@ -27,13 +31,13 @@ function ProjectsSection() {
   };
 
   return (
-    <SectionWatcher sectionId="projects" className="mt-64 pt-96">
+    <SectionWatcher sectionId={TSectionId.PROJECTS} className="mt-64 pt-96">
       <div
         ref={projectsRef}
         style={{ height: `${PROJECT_COUNT * 40}rem` }}
-        className="h-[320rem] px-8"
+        className="h-[320rem] px-6 tablet:px-10"
       >
-        <div className="sticky top-1/2 mx-auto w-full max-w-[64rem] -translate-y-1/2 overflow-hidden px-8">
+        <div className="sticky top-1/2 mx-auto w-full max-w-[64rem] -translate-y-1/2 overflow-hidden">
           <Checkbox
             className="flex justify-end"
             size="lg"

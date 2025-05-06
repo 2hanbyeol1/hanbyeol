@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { create } from 'zustand';
 
 interface TModalOptions {
-  title?: string;
+  title?: string | ReactNode;
   content: string | ReactNode;
   duration?: number;
 }
@@ -13,7 +13,7 @@ interface TModalStore {
   closeModal: () => void;
 }
 
-const useModal = create<TModalStore>((set) => ({
+const useModalStore = create<TModalStore>((set) => ({
   modalOptions: null,
   openModal: (modalOption) => {
     set({ modalOptions: modalOption });
@@ -23,4 +23,4 @@ const useModal = create<TModalStore>((set) => ({
   },
 }));
 
-export default useModal;
+export default useModalStore;

@@ -1,9 +1,9 @@
 'use client';
-import useModal from '@/app/_stores/useModal';
+import useModalStore from '@/app/_stores/useModalStore';
 import Image from 'next/image';
 
 function EmailCopyButton() {
-  const openModal = useModal((state) => state.openModal);
+  const openModal = useModalStore((state) => state.openModal);
   const EMAIL = '2hanbyeol1@naver.com';
 
   const handleButtonClick = () => {

@@ -19,13 +19,23 @@ function Experience({
   return (
     <div className="flex flex-col gap-12">
       <div>
-        <div
-          className="mb-2 text-xl font-medium [&>span]:text-dark2"
-          aria-label={`${parseDateToAriaLabel(duration[0])}부터 ${parseDateToAriaLabel(duration[1])}까지`}
-        >
-          <span>{parseDateToYYYYMM(duration[0])}</span>
-          <span aria-hidden> - </span>
-          <span>{parseDateToYYYYMM(duration[1])}</span>
+        <div className="mb-2 flex text-lg">
+          {duration.map((d, idx) => (
+            <div
+              key={`duration-${title}-${idx}`}
+              className={'font-medium [&>span]:text-dark3'}
+              aria-label={`${parseDateToAriaLabel(d[0])}부터 ${parseDateToAriaLabel(d[1])}까지`}
+            >
+              <span>{parseDateToYYYYMM(d[0])}</span>
+              <span aria-hidden> - </span>
+              <span>{parseDateToYYYYMM(d[1])}</span>
+              {idx !== duration.length - 1 && (
+                <span className="mx-2" aria-hidden>
+                  &#183;
+                </span>
+              )}
+            </div>
+          ))}
         </div>
         <div className="relative">
           <Image
@@ -33,7 +43,7 @@ function Experience({
             height={32}
             src="/image/star.png"
             alt="별"
-            className="absolute right-0 -z-10 tablet:-left-14 tablet:top-1"
+            className="absolute right-0 -z-10"
             aria-hidden
           />
           <h3 className="mb-1.5 text-3xl font-bold">{title}</h3>

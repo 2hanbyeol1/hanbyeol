@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 function Project({
-  project: { id, title, description, duration, mainSkills, bgDark },
+  project: { id, title, subtitle, duration, mainSkills, bgDark },
 }: {
   project: TProject;
 }) {
@@ -26,13 +26,13 @@ function Project({
       </div>
       <h3 className="mb-2 text-2xl font-bold">{title}</h3>
       <p className="mb-5 line-clamp-2 h-12 text-center text-lg">
-        {Array.isArray(description)
-          ? description.map((desc, idx) => (
+        {Array.isArray(subtitle)
+          ? subtitle.map((desc, idx) => (
               <span key={`${id}-desc-${idx}`} className="block leading-normal">
                 {desc}
               </span>
             ))
-          : description}
+          : subtitle}
       </p>
       <div
         className="mb-5 [&>span]:text-dark2"
@@ -52,7 +52,7 @@ function Project({
               alt={skill}
             />
             <span
-              className="hover absolute left-1/2 top-[140%] hidden -translate-x-1/2 whitespace-nowrap rounded-sm bg-black/50 px-2 py-1 text-white group-hover/skill:block"
+              className="absolute left-1/2 top-[140%] hidden -translate-x-1/2 whitespace-nowrap rounded-sm bg-black/50 px-2 py-1 text-white backdrop-blur-xl group-hover/skill:block"
               role="tooltip"
               aria-label={`사용된 기술: ${skill}`}
             >
