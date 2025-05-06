@@ -10,7 +10,7 @@ interface ProjectDetailPageParams {
 }
 
 interface ProjectDetailPageProps {
-  params: ProjectDetailPageParams;
+  params: Promise<ProjectDetailPageParams>;
 }
 
 async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
