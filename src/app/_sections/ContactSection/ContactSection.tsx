@@ -11,7 +11,7 @@ function ContactSection() {
       sectionId={TSectionId.CONTACT}
       className="flex h-screen w-full items-center justify-center"
     >
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-7 px-6">
         <div className="flex flex-col items-center gap-3">
           <Image
             width={132}

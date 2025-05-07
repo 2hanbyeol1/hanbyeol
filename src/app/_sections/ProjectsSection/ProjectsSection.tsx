@@ -20,7 +20,6 @@ function ProjectsSection() {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    // [0, Math.min(0, -(320 * (PROJECT_COUNT - 1)))],
     [0, Math.min(0, -(296 * (PROJECT_COUNT - 1)))],
   );
 
