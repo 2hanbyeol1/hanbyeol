@@ -19,7 +19,7 @@ function Project({
         <Image
           width={60}
           height={60}
-          src={`/image/projects/${id}.png`}
+          src={`/image/projects/${id}/logo.png`}
           alt={`${title} 로고`}
           className="h-auto duration-100 group-hover/project:scale-125"
         />

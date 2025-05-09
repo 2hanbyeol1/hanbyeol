@@ -14,7 +14,8 @@ export type TSkillImgFileName =
   | 'styled-component'
   | 'tailwind-css'
   | 'node'
-  | 'supabase';
+  | 'supabase'
+  | 'material-ui';
 
 export interface TSkill {
   title: string;

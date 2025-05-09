@@ -43,7 +43,7 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             className={`relative flex h-10 w-10 flex-shrink-0 items-center rounded-md ${bgDark && 'bg-black'}`}
           >
             <Image
-              src={`/image/projects/${id}.png`}
+              src={`/image/projects/${id}/logo.png`}
               alt={`${title} 로고`}
               fill
               className="object-contain p-1"
@@ -144,7 +144,10 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               <td className="overflow-x-scroll pb-3">
                 <ExpandableCards
                   className="h-80"
-                  images={images}
+                  images={images.map((image) => ({
+                    ...image,
+                    src: `/image/projects/${id}/${image.src}.png`,
+                  }))}
                   isMobile={isMobile}
                 />
               </td>

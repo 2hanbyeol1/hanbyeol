@@ -4,7 +4,10 @@ export interface TContact {
 }
 
 export const CONTACT_LINKS: TContact[] = [
-  { href: '/file/resume.pdf', text: 'Resume' },
+  {
+    href: 'https://www.rallit.com/hub/resumes/743417/%EC%9D%B4%ED%95%9C%EB%B3%84',
+    text: 'Resume',
+  },
   {
     href: 'https://www.linkedin.com/in/%ED%95%9C%EB%B3%84-%EC%9D%B4-07362b2a6/',
     text: 'LinkedIn',
