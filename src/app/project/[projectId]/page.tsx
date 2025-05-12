@@ -141,23 +141,20 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             </tr>
           </tbody>
         </table>
-
-        {images && images.length > 0 && (
-          <div className={TR_CLASSNAME}>
-            <div className="whitespace-nowrap font-semibold">참고 이미지</div>
-            <div className="flex overflow-x-scroll py-3">
-              <ImageSwiper
-                width={isMobile ? 300 : 800}
-                images={images.map((image) => ({
-                  ...image,
-                  src: `/image/projects/${id}/${image.src}.png`,
-                }))}
-                transition={4000}
-              />
-            </div>
-          </div>
-        )}
       </div>
+      {images && images.length > 0 && (
+        <div className="mt-10">
+          <ImageSwiper
+            width={isMobile ? 300 : 600}
+            ratio={isMobile ? [9, 16] : [16, 9]}
+            images={images.map((image) => ({
+              ...image,
+              src: `/image/projects/${id}/${image.src}.png`,
+            }))}
+            transition={3000}
+          />
+        </div>
+      )}
     </div>
   );
 }
