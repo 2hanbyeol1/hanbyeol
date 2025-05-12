@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://hanbyeol.vercel.app/sitemap.xml
