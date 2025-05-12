@@ -1,10 +1,10 @@
 import ImageSwiper from '@/app/_components/ImageSwiper';
+import Tab from '@/app/_components/Tab';
 import { PROJECT_CONTENTS } from '@/app/_data/project';
 import { parseDateToAriaLabel, parseDateToYYYYMM } from '@/app/_utils/util';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import React from 'react';
 
 interface ProjectDetailPageParams {
   projectId: string;
@@ -37,7 +37,7 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
   return (
     <div className="flex min-h-screen flex-col rounded-lg bg-gradient-to-tl from-primary3/60 via-primary3/30 via-5% to-primary3/0 p-6">
-      <div className="mb-10 flex flex-col items-start gap-x-4 gap-y-3.5 tablet:mb-7 tablet:flex-row tablet:items-center">
+      <div className="mb-10 flex flex-col items-start gap-x-4 gap-y-3.5 tablet:mb-5 tablet:flex-row tablet:items-center">
         <div className="flex items-center gap-3">
           <div
             className={`relative flex h-10 w-10 flex-shrink-0 items-center rounded-md ${bgDark && 'bg-black'}`}
@@ -125,36 +125,49 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 ))}
               </td>
             </tr>
-            <tr className={TR_CLASSNAME}>
-              <th>담당 업무</th>
-              <td>
-                <ul className="flex flex-col gap-4 max-tablet:pl-6">
-                  {tasks?.map((task, idx) => (
-                    <li
-                      key={`tro-${idx}`}
-                      className="list-disc font-light leading-normal [&>b]:font-semibold"
-                      dangerouslySetInnerHTML={{ __html: task }}
-                    ></li>
-                  ))}
-                </ul>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
-      {images && images.length > 0 && (
-        <div className="mt-10">
-          <ImageSwiper
-            width={isMobile ? 300 : 600}
-            ratio={isMobile ? [9, 16] : [16, 9]}
-            images={images.map((image) => ({
-              ...image,
-              src: `/image/projects/${id}/${image.src}.png`,
-            }))}
-            transition={3000}
-          />
-        </div>
-      )}
+      <Tab
+        className="mt-8"
+        tabMenus={[
+          '담당 업무',
+          // ! '트러블 슈팅',
+          // ! '러닝 포인트',
+          ...(images ? ['참고 이미지'] : []),
+        ]}
+        tabContents={[
+          <ul
+            key="proj-detail-tab-1"
+            className="flex flex-col gap-4 max-tablet:pl-6"
+          >
+            {tasks?.map((task, idx) => (
+              <li
+                key={`tro-${idx}`}
+                className="list-disc font-light leading-normal [&>b]:font-semibold"
+                dangerouslySetInnerHTML={{ __html: task }}
+              ></li>
+            ))}
+          </ul>,
+          // ! <div key="proj-detail-tab-2">트러블 슈팅!!</div>,
+          // ! <div key="proj-detail-tab-3">러닝 포인트!!</div>,
+          ...(images
+            ? [
+                <div key="proj-detail-tab-4">
+                  <ImageSwiper
+                    width={isMobile ? 300 : 600}
+                    ratio={isMobile ? [9, 16] : [16, 9]}
+                    images={images.map((image) => ({
+                      ...image,
+                      src: `/image/projects/${id}/${image.src}.png`,
+                    }))}
+                    transition={3000}
+                  />
+                </div>,
+              ]
+            : []),
+        ]}
+      />
     </div>
   );
 }

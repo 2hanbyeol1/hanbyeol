@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply leading-none text-dark;
+  @apply leading-none;
 }
 
 body {

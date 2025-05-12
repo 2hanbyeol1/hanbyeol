@@ -28,14 +28,19 @@ function ImageSwiper({
         delay: transition,
       }}
       loop={true}
-      className="w-full"
+      className="mr-auto"
+      // className="w-full"
     >
       {images.map(({ src, caption }) => (
         <SwiperSlide key={caption}>
-          <figure className="flex flex-col items-center gap-2 text-sm">
+          <figure
+            style={{
+              maxWidth: width,
+            }}
+            className="flex flex-col items-center gap-2 text-sm"
+          >
             <div
               style={{
-                maxWidth: width,
                 aspectRatio: `${ratio[0]}/${ratio[1]}`,
               }}
               className="relative w-full"
