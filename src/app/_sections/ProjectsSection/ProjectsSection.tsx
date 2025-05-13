@@ -2,14 +2,19 @@
 import Checkbox from '@/app/_components/Checkbox';
 import { PROJECT_CONTENTS } from '@/app/_data/project';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef, useState } from 'react';
+import { MouseEvent, useRef, useState } from 'react';
 import SectionWatcher from '../SectionWatcher';
 import Project from './Project';
 import { TSectionId } from '@/app/_stores/useActiveSectionIdStore';
+import { throttle } from '@/app/_utils/util';
 
 function ProjectsSection() {
   const [isMainChecked, setMainChecked] = useState<boolean>(true);
+  const [isDragging, setDragging] = useState<boolean>(false);
+
   const projectsRef = useRef<HTMLDivElement | null>(null);
+  const startX = useRef<number>(0);
+
   const { scrollYProgress } = useScroll({
     target: projectsRef,
   });
@@ -29,12 +34,42 @@ function ProjectsSection() {
     projectsRef?.current?.scrollIntoView();
   };
 
+  const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
+    console.log('down');
+    if (!projectsRef.current) return;
+    setDragging(true);
+    startX.current = e.pageX;
+    projectsRef.current.style.cursor = 'grabbing';
+  };
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    console.log('move');
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = (x - startX.current) * -5; // 드래그 속도
+    window.scrollBy(0, walk);
+    console.log(walk, startX.current);
+  };
+
+  const throttledMouseMove = throttle(handleMouseMove, 10);
+
+  const handleMouseUp = () => {
+    if (!projectsRef.current) return;
+    setDragging(false);
+    projectsRef.current.style.cursor = 'grab';
+  };
+
   return (
     <SectionWatcher sectionId={TSectionId.PROJECTS} className="mt-64 pt-96">
       <div
         ref={projectsRef}
         style={{ height: `${PROJECT_COUNT * 40}rem` }}
-        className="h-[320rem] px-6 tablet:px-10"
+        className="h-[320rem] cursor-grab px-6 tablet:px-10"
+        onMouseDown={handleMouseDown}
+        onMouseMove={throttledMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
       >
         <div className="sticky top-1/2 mx-auto w-full max-w-[64rem] -translate-y-1/2 overflow-hidden">
           <Checkbox

@@ -6,3 +6,20 @@ export const parseDateToYYYYMM = (date: Date) =>
 
 export const parseDateToAriaLabel = (date: Date) =>
   `${date.getFullYear()}년 ${date.getMonth() + 1}월`;
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const throttle = <T extends (...args: any[]) => void>(
+  fn: T,
+  wait: number,
+): ((...args: Parameters<T>) => void) => {
+  let inThrottle = false;
+
+  return (...args: Parameters<T>) => {
+    if (inThrottle) return;
+    fn(...args);
+    inThrottle = true;
+    setTimeout(() => {
+      inThrottle = false;
+    }, wait);
+  };
+};
