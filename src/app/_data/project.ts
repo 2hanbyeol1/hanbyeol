@@ -10,6 +10,8 @@ export interface TProject {
   team?: TTeam; // undefined인 경우 개인 프로젝트
   bgDark?: boolean;
   tasks: string[];
+  troubles?: string[];
+  learnings?: string[];
   images?: { src: string; caption: string }[];
   website?: string;
   isMobile?: boolean;
@@ -34,12 +36,23 @@ export const PROJECT_CONTENTS: TProject[] = [
       be: 1,
     },
     tasks: [
-      '<b>기획부터 디자인 및 프론트엔드 개발에 참여</b>',
+      '<b>기획 일부 참여, 디자인 및 FE 개발 담당</b>',
       '<b>프로젝트 관리 페이지</b><br>프로젝트 CRUD, 활성화, 검색',
       '<b>인재 검색 페이지</b><br>인재 필터 (직군, 연차, 경험 태그, 자연어 검색)<br>필터 검색 기록 저장 / 조회 / 삭제<br>숏리스트에 인재 저장<br>인재 상세 조회<br>인재 신고<br>인재 URL 복사',
       '<b>숏리스트 페이지</b><br>메모<br>의뢰 요청',
       '<b>간단한 사용법 설명</b>',
       '<b>무료 이용 종료 모달</b>',
+    ],
+    troubles: [
+      '<b>상태 관리 데이터 구조에 대한 고민</b><br>→ 각 상태를 역할별로 나누고, 어떤 상태가 어떤 흐름으로 연결되는지 구조화하여 명확하게 설계',
+      '<b>Walktour 라이브러리 props</b><br>라이브러리에 필요한 기능이 존재하지 않았음.<br>→ 문서에는 해당 내용이 없었지만, 실제 오픈소스 코드에는 존재하는 것을 확인<br>→ 해당 라이브러리에 PR 작성',
+    ],
+    learnings: [
+      '<b>0 to 1</b> 경험',
+      '<b>피그마를 이용한 디자인</b> 경험',
+      '<b>프로덕트를 사용자 관점에서</b> 바라보는 시야가 넓어짐',
+      'jest + react-testing-library를 이용한 <b>테스트 코드</b> 작성',
+      '<b>PM과의 소통</b>',
     ],
     website: 'https://talix.kr/',
     images: [
@@ -90,6 +103,17 @@ export const PROJECT_CONTENTS: TProject[] = [
       '<b>SEO 최적화 + 써드파티 서비스 연동</b><br>SSG(static export)로 구현<br>메타데이터, 오픈그래프, 캐노니컬 태그 적용<br>채널톡, Hotjar 연결',
       '<b>CI/CD 구현</b><br>린팅, 빌드, ssh+scp 를 이용한 배포<br>배포 성공 여부에 따른 슬랙 알림<br>AWS(Cloudfront + S3)로 이전',
       '<b>홈페이지 디자인 리뉴얼</b>',
+    ],
+    troubles: [
+      '<b>블로그 작성 방법에 대한 고민</b><br>→ 블로그 작성 및 스타일링에 대한 기준이 명확하지 않음<br>→ Shadow DOM으로 스타일을 분리, 노션의 HTML 내보내기 기능 활용 + 블로그 포매터 구현',
+      '<b>FAQ api 호출 위치에 대한 고민</b><br>→ FAQ를 CSR로 구현할 경우 SEO에 부정적인 영향을 줄 우려가 있음<br>→ SEO 최적화를 위해 상위 컴포넌트에서 데이터를 호출해 SSG로 구현',
+    ],
+    learnings: [
+      '<b>초기 스타트업 경험</b>과 <b>HR 도메인</b>에 대한 이해',
+      'CI/CD, AWS 연결, SEO 최적화 등 <b>새로운 기술</b> 경험',
+      '<b>static export</b>를 사용한 next.js의 동작 이해',
+      '<b>Docker를 활용한 배포 환경 테스트</b> 경험',
+      '<b>백엔드 개발자와의 소통</b>',
     ],
     website: 'https://searchright.net/',
     images: [
@@ -151,6 +175,17 @@ export const PROJECT_CONTENTS: TProject[] = [
       '<b>프로젝트 문서화 및 기술 스택 정리</b>',
       '<b>반응형 웹 페이지 구현</b>',
     ],
+    troubles: [
+      '<b>DB 구조 설계로 인한 식단 정렬 불가</b><br>→ dietType 컬럼의 타입이 string 이라 아침, 점심, 저녁 순서로 정렬이 어려움<br>→ dietType 컬럼의 타입을 int (0, 1, 2)로 변경',
+      '<b>식품영양성분 DB정보 공공데이터 OPEN API 변경</b><br>→ OPEN API 변경으로 기존에 존재하던 FOOD_NAME_KR parameter가 사라져서 음식 이름으로 검색할 수 없게 됨<br>→ 공공데이터 API 대신 csv 파일을 전처리하여 supabase에 입력',
+    ],
+    learnings: [
+      '<b>낙관적 업데이트</b>를 적용하여 사용자 경험 향상',
+      '<b>유저 피드백</b>을 이용한 UX 개선',
+      '<b>커스텀 훅</b>을 이용한 유지보수성 및 응집성 개선',
+      '<b>Tanstack query 아키텍처에 대한 논의</b>, 팀원들과 회의, 아키텍처에 대한 이해 증진',
+      '<b>디자이너와 협업</b> 및 <b>Figma</b>를 활용한 웹 퍼블리싱 경험',
+    ],
     website: 'https://oosie.vercel.app',
   },
   {
@@ -171,6 +206,10 @@ export const PROJECT_CONTENTS: TProject[] = [
       '<b>디자인</b>',
       '<b>메인페이지</b> 개발<br>무한스크롤<br>스크롤 버튼',
       '<b>로딩/에러 페이지</b>',
+    ],
+    learnings: [
+      '새로운 css property - <b>transform origin 학습</b>',
+      '`useInfiniteQuery`를 이용한 <b>무한스크롤 구현 경험</b>',
     ],
     images: [
       {
@@ -229,7 +268,8 @@ export const PROJECT_CONTENTS: TProject[] = [
     mainSkills: ['react', 'javascript', 'styled-component', 'node'],
     isMain: false,
     bgDark: true,
-    tasks: [
+    tasks: ['<b>가입 및 로그인 기능</b>', '<b>채팅 기능</b>', '<b>반응형</b>'],
+    learnings: [
       '<b>React + Typescript</b> 공부',
       '<b>Node.js 및 Web Socket</b> 공부',
     ],
@@ -328,6 +368,16 @@ export const PROJECT_CONTENTS: TProject[] = [
       '<b>패키지 구조 설계</b>',
       '<b>9개의 공용 컴포넌트 구현</b>',
       '<b>지속적인 리팩토링</b>',
+    ],
+    troubles: [
+      '<b>이미지 업스케일링 결과 링크가 about:blank로 나옴</b><br>API에서 횟수 제한에 걸리면 response가 201지만 결과 값이 빈 문자열로 반환됨<br>→ 결과 이미지 주소가 빈 문자열인지 확인하고 경고 창을 띄움',
+      '<b>업스케일링 결과 화면이 404로 표시됨</b><br>API에서 결과 주소를 먼저 반환하고 이미지를 업로드하는데 시간이 소요됨<br>→ setInterval를 사용하여 1초마다 이미지 url status를 확인하고 200일 때 미리보기 창을 표시함',
+    ],
+    learnings: [
+      '팀 내 스프린트 및 스크럼 회의를 통해 <b>Agile 개발 방식에 익숙</b>해짐',
+      '마감 기한을 맞추고 고객의 요구를 충족하기 위한 <b>유연한 프로젝트 관리와 빠른 의사 결정의 중요성 깨달음</b>',
+      'React, axios 등 프로젝트에 필요한 기술을 신속하게 배우고 적용하며 <b>새로운 기술 학습에 익숙</b>해짐',
+      '<b>고객사와 소통 경험</b>',
     ],
   },
 ];

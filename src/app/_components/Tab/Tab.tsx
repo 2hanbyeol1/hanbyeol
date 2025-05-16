@@ -28,7 +28,7 @@ function Tab({ className, tabMenus, tabContents }: TabProps) {
           </button>
         ))}
       </div>
-      <div className="max-w-full p-4">{tabContents[activeIndex]}</div>
+      <div className="w-full max-w-full p-4">{tabContents[activeIndex]}</div>
     </div>
   );
 }

@@ -27,6 +27,8 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     bgDark,
     team,
     tasks,
+    troubles,
+    learnings,
     images,
     isMobile,
     website,
@@ -134,8 +136,8 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             className="mt-8"
             tabMenus={[
               '담당 업무',
-              // ! '트러블 슈팅',
-              // ! '러닝 포인트',
+              ...(troubles ? ['트러블 슈팅'] : []),
+              ...(learnings ? ['러닝 포인트'] : []),
               ...(images ? ['참고 이미지'] : []),
             ]}
             tabContents={[
@@ -143,16 +145,46 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 key="proj-detail-tab-1"
                 className="flex flex-col gap-4 max-tablet:pl-6"
               >
-                {tasks?.map((task, idx) => (
+                {tasks.map((task, idx) => (
                   <li
-                    key={`tro-${idx}`}
+                    key={`proj-detail-task-${idx}`}
                     className="list-disc font-light leading-normal [&>b]:font-semibold"
                     dangerouslySetInnerHTML={{ __html: task }}
                   ></li>
                 ))}
               </ul>,
-              // ! <div key="proj-detail-tab-2">트러블 슈팅!!</div>,
-              // ! <div key="proj-detail-tab-3">러닝 포인트!!</div>,
+              ...(troubles
+                ? [
+                    <ul
+                      key="proj-detail-tab-2"
+                      className="flex flex-col gap-4 max-tablet:pl-6"
+                    >
+                      {troubles.map((task, idx) => (
+                        <li
+                          key={`proj-detail-trou-${idx}`}
+                          className="list-disc font-light leading-normal [&>b]:font-semibold"
+                          dangerouslySetInnerHTML={{ __html: task }}
+                        ></li>
+                      ))}
+                    </ul>,
+                  ]
+                : []),
+              ...(learnings
+                ? [
+                    <ul
+                      key="proj-detail-tab-3"
+                      className="flex flex-col gap-4 max-tablet:pl-6"
+                    >
+                      {learnings.map((task, idx) => (
+                        <li
+                          key={`proj-detail-lear-${idx}`}
+                          className="list-disc font-light leading-normal [&>b]:font-semibold"
+                          dangerouslySetInnerHTML={{ __html: task }}
+                        ></li>
+                      ))}
+                    </ul>,
+                  ]
+                : []),
               ...(images
                 ? [
                     <div key="proj-detail-tab-4">
