@@ -24,8 +24,10 @@ function Project({
           className="h-auto duration-100 group-hover/project:scale-125"
         />
       </div>
-      <h3 className="mb-2 text-2xl font-bold">{title}</h3>
-      <p className="mb-5 line-clamp-2 h-12 text-center text-lg">
+      <h3 className="desktop:text-2xl mb-2 text-lg font-bold tablet:text-xl">
+        {title}
+      </h3>
+      <p className="desktop:text-lg mb-5 line-clamp-2 h-12 text-center text-base">
         {Array.isArray(subtitle)
           ? subtitle.map((desc, idx) => (
               <span key={`${id}-desc-${idx}`} className="block leading-normal">

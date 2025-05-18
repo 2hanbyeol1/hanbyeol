@@ -1,6 +1,6 @@
 function IntroText() {
   return (
-    <h1 className="text-center text-3xl font-semibold foldable:text-3xl tablet:text-end tablet:text-4xl [&>p]:leading-snug">
+    <h1 className="desktop:text-4xl text-center text-2xl font-semibold foldable:text-3xl tablet:text-end tablet:text-3xl [&>p]:leading-snug">
       <p>반갑습니다!</p>
       <p className="text-primary">
         <span className="inline-block font-bold text-primary">

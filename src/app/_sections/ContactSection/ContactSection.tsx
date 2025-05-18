@@ -13,17 +13,15 @@ function ContactSection() {
     >
       <div className="flex flex-col gap-7 px-6">
         <div className="flex flex-col items-center gap-3">
-          <Image
-            width={132}
-            height={132}
-            src="/image/mail.png"
-            alt="메일 아이콘"
-            className="animate-bounce"
-          />
-          <h4 className="text-4xl font-bold">Contact ME</h4>
+          <div className="desktop:h-32 desktop:w-32 relative h-24 w-24 animate-bounce tablet:h-28 tablet:w-28">
+            <Image src="/image/mail.png" alt="메일 아이콘" fill />
+          </div>
+          <h4 className="desktop:text-4xl text-2xl font-bold tablet:text-3xl">
+            Contact ME
+          </h4>
           <EmailCopyButton />
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-2 tablet:grid-cols-4 tablet:gap-4">
           {CONTACT_LINKS.map(({ href, text }) => (
             <Button
               key={href}
@@ -32,6 +30,7 @@ function ContactSection() {
               rel="noopener noreferrer"
               target="_blank"
               theme="light"
+              className="desktop:text-base text-sm"
             >
               {text}
             </Button>

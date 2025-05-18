@@ -8,7 +8,9 @@ function ProjectNotFoundPage() {
       <div className="flex flex-col items-center gap-5">
         <div className="text-5xl">🤔</div>
         <div className="text-center">
-          <h1 className="mb-2 text-2xl font-bold">프로젝트를 찾을 수 없어요</h1>
+          <h1 className="desktop:text-2xl mb-2 text-lg font-bold tablet:text-xl">
+            프로젝트를 찾을 수 없어요
+          </h1>
           <p className="text-center">
             프로젝트 섹션에서 다시 프로젝트를 선택해주세요.
           </p>

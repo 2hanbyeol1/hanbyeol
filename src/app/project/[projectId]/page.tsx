@@ -52,7 +52,9 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 className="object-contain p-1"
               />
             </div>
-            <h1 className="text-3xl font-bold">{title}</h1>
+            <h1 className="desktop:text-3xl text-xl font-bold tablet:text-2xl">
+              {title}
+            </h1>
           </div>
           <p className="flex flex-wrap gap-1.5 text-dark3 tablet:text-xl">
             {Array.isArray(description)

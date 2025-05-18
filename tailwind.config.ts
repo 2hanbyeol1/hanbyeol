@@ -12,6 +12,7 @@ export default {
       mobile: '360px',
       foldable: '523px',
       tablet: '768px',
+      desktop: '1280px',
     },
     extend: {
       fontFamily: {

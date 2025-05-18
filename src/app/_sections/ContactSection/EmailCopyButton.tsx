@@ -26,17 +26,13 @@ function EmailCopyButton() {
 
   return (
     <button
-      className="flex items-center text-2xl text-primary hover:underline"
+      className="desktop:text-2xl flex items-center gap-2 text-lg text-primary hover:underline tablet:text-xl"
       onClick={handleButtonClick}
       aria-label="이메일 클립보드 복사 버튼"
     >
-      <Image
-        width={30}
-        height={30}
-        src="/image/copy.png"
-        alt="복사 아이콘"
-        className="mr-2"
-      />
+      <div className="desktop:w-6 desktop:h-6 relative h-5 w-5">
+        <Image src="/image/copy.png" alt="복사 아이콘" fill />
+      </div>
       {EMAIL}
     </button>
   );
@@ -62,7 +58,7 @@ function SuccessModalContent() {
           />
         </svg>
       </div>
-      <p className="text-xl">
+      <p className="desktop:text-xl text-base tablet:text-lg">
         이메일이 <span className="text-bold">클립보드에 복사</span>
         되었습니다!
       </p>
