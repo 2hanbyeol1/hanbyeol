@@ -31,7 +31,7 @@ function EmailCopyButton() {
       aria-label="이메일 클립보드 복사 버튼"
     >
       <div className="desktop:w-6 desktop:h-6 relative h-5 w-5">
-        <Image src="/image/copy.png" alt="복사 아이콘" fill />
+        <Image src="/image/copy.png" alt="복사 아이콘" fill sizes="1.5rem" />
       </div>
       {EMAIL}
     </button>

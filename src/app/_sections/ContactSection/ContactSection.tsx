@@ -14,7 +14,7 @@ function ContactSection() {
       <div className="flex flex-col gap-7 px-6">
         <div className="flex flex-col items-center gap-3">
           <div className="desktop:h-32 desktop:w-32 relative h-24 w-24 animate-bounce tablet:h-28 tablet:w-28">
-            <Image src="/image/mail.png" alt="메일 아이콘" fill />
+            <Image src="/image/mail.png" alt="메일 아이콘" fill sizes="8rem" />
           </div>
           <h4 className="desktop:text-4xl text-2xl font-bold tablet:text-3xl">
             Contact ME

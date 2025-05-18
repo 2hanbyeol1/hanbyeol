@@ -49,6 +49,7 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 src={`/image/projects/${id}/logo.png`}
                 alt={`${title} 로고`}
                 fill
+                sizes="3rem"
                 className="object-contain p-1"
               />
             </div>

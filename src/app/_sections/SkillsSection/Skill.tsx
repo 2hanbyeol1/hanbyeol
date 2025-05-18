@@ -14,6 +14,7 @@ function Skill({
           alt={`${imgFileName} 아이콘`}
           className="rounded-md"
           fill
+          sizes="6rem"
         />
       </div>
       <h3 className="desktop:text-3xl mb-5 text-2xl font-bold">{title}</h3>
