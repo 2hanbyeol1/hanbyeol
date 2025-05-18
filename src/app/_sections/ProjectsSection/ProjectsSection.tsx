@@ -35,7 +35,6 @@ function ProjectsSection() {
   };
 
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
-    console.log('down');
     if (!projectsRef.current) return;
     setDragging(true);
     startX.current = e.pageX;
@@ -43,7 +42,6 @@ function ProjectsSection() {
   };
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    console.log('move');
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX;

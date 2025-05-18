@@ -37,7 +37,7 @@ function Project({
           : subtitle}
       </p>
       <div
-        className="mb-5 [&>span]:text-dark2"
+        className="desktop:text-base mb-5 text-sm [&>span]:text-dark2"
         aria-label={`${parseDateToAriaLabel(duration[0])}부터 ${parseDateToAriaLabel(duration[1])}까지`}
       >
         <span>{parseDateToYYYYMM(duration[0])}</span>

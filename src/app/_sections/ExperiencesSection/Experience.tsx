@@ -17,7 +17,7 @@ function Experience({
   experience: TExperience;
 }) {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-8 tablet:gap-12">
       <div>
         <div className="desktop:text-lg mb-2 flex text-sm tablet:text-base">
           {duration.map((d, idx) => (

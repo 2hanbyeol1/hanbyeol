@@ -28,7 +28,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'talix',
     title: 'TALIX',
     subtitle: ['경험 태그를 통한 인재 검색,', 'SaaS 프로덕트'],
-    duration: [new Date('2025.02'), new Date('2025.04')],
+    duration: [new Date('2025-02-01'), new Date('2025-04-01')],
     mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
     isMain: true,
     team: {
@@ -78,7 +78,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'portfolio',
     title: '포트폴리오',
     subtitle: ['FE 개발자 이한별,', '포트폴리오 웹사이트'],
-    duration: [new Date('2025.01'), new Date('2025.05')],
+    duration: [new Date('2025-01-01'), new Date('2025-05-01')],
     mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
     isMain: false,
     tasks: [
@@ -90,7 +90,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'searchright',
     title: '서치라이트',
     subtitle: ['인재 추천 솔루션,', '서치라이트를 소개하는 랜딩페이지'],
-    duration: [new Date('2024.09'), new Date('2024.11')],
+    duration: [new Date('2024-09-01'), new Date('2024-11-01')],
     mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
     isMain: true,
     team: {
@@ -147,7 +147,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'oosie',
     title: 'OOSIE',
     subtitle: ['기록, 챌린지를 통한', '헬스 케어 커뮤니티'],
-    duration: [new Date('2024.07'), new Date('2024.08')],
+    duration: [new Date('2024-07-01'), new Date('2024-08-01')],
     mainSkills: [
       'next',
       'typescript',
@@ -192,7 +192,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'culture-train',
     title: '문화열차',
     subtitle: '공연 예약 시스템',
-    duration: [new Date('2024.07'), new Date('2024.07')],
+    duration: [new Date('2024-07-01'), new Date('2024-07-01')],
     mainSkills: [
       'next',
       'typescript',
@@ -235,7 +235,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'movie-movie',
     title: '무비무비',
     subtitle: '영화 검색 웹페이지',
-    duration: [new Date('2024.05'), new Date('2024.05')],
+    duration: [new Date('2024-05-01'), new Date('2024-05-01')],
     mainSkills: ['html', 'css', 'javascript'],
     isMain: false,
     bgDark: true,
@@ -264,7 +264,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'chat-chat',
     title: '챗챗',
     subtitle: ['Web Socket 학습용', '채팅 애플리케이션'],
-    duration: [new Date('2023.10'), new Date('2023.12')],
+    duration: [new Date('2023-10-01'), new Date('2023-12-01')],
     mainSkills: ['react', 'javascript', 'styled-component', 'node'],
     isMain: false,
     bgDark: true,
@@ -285,7 +285,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'egomogo',
     title: 'egomogo',
     subtitle: ['명지대 인근 음식점 랜덤 추첨', '모바일 애플리케이션'],
-    duration: [new Date('2023.07'), new Date('2023.08')],
+    duration: [new Date('2023-07-01'), new Date('2023-08-01')],
     mainSkills: [
       'react-native',
       'javascript',
@@ -323,7 +323,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     id: 'liberty-52',
     title: 'Liberty 52 Frame',
     subtitle: ['커스텀 스피커, Liberty 52', '쇼핑몰 및 관리자 서비스'],
-    duration: [new Date('2023.03'), new Date('2023.12')],
+    duration: [new Date('2023-03-01'), new Date('2023-12-01')],
     mainSkills: [
       'react',
       'javascript',

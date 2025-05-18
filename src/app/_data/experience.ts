@@ -13,8 +13,8 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
     title: 'SearcHRight AI',
     subtitle: '프론트엔드 개발',
     duration: [
-      [new Date('2024.09'), new Date('2024.11')],
-      [new Date('2025.02'), new Date('2025.04')],
+      [new Date('2024-09-01'), new Date('2024-11-01')],
+      [new Date('2025-02-01'), new Date('2025-04-01')],
     ],
     description:
       '서치라이트는 숨어있는 ‘인재’들의 역량을 분석하여 회사에 가장 적합한 후보자를 추천하는 솔루션을 개발하는 스타트업입니다.',
@@ -47,7 +47,7 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
   {
     title: '내일배움캠프',
     subtitle: 'React 5기',
-    duration: [[new Date('2024.04'), new Date('2024.08')]],
+    duration: [[new Date('2024-04-01'), new Date('2024-08-01')]],
     activities: [
       '매일 <b>12시간 집중 학습</b> 및 TIL 작성',
       '<b>프로젝트 11개</b> 진행 (개인 5개, 팀 6개, 리더 3회)',
@@ -61,7 +61,7 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
   {
     title: '오픈소스 컨트리뷰션 아카데미',
     subtitle: 'Git 활용 및 React',
-    duration: [[new Date('2023.07'), new Date('2023.08')]],
+    duration: [[new Date('2023-07-01'), new Date('2023-08-01')]],
     activities: [
       '<b>Git, React, React Native 기초 학습</b>',
       '오픈소스 <b>`hyper`의 코드와 패키지 구조 분석</b>',

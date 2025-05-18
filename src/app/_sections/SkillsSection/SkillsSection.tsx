@@ -10,7 +10,7 @@ function SkillsSection() {
       sectionId={TSectionId.SKILLS}
       className="scroll-mt-36 pt-60"
     >
-      <div className="relative mx-auto grid w-full max-w-[58rem] grid-cols-1 gap-x-20 gap-y-40 px-6 tablet:grid-cols-2 tablet:px-10">
+      <div className="relative mx-auto grid w-full max-w-[58rem] grid-cols-1 gap-x-20 gap-y-20 px-6 tablet:grid-cols-2 tablet:gap-y-40 tablet:px-10">
         <div
           className="absolute -left-32 -top-32 -z-50 aspect-square w-full max-w-[30rem] rounded-full bg-primary/30 blur-[220px]"
           aria-hidden
