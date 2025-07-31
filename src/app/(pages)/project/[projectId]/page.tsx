@@ -36,15 +36,15 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   } = project;
 
   const TR_CLASSNAME =
-    '[&_th]:tablet:py-3 max-tablet:mb-6 [&_td]:py-3 max-tablet:grid [&_th]:py-0 [&_th]:align-top';
+    '[&_th]:tablet:py-3 max-tablet:mb-5 [&_td]:py-3 max-tablet:grid [&_th]:py-0 [&_th]:align-top';
 
   return (
-    <div className="flex min-h-screen justify-center rounded-lg bg-gradient-to-tl from-primary3/60 via-primary3/30 via-5% to-primary3/0 p-6">
-      <div className="flex w-full max-w-[800px] flex-col">
-        <div className="mb-10 flex flex-col items-start gap-x-4 gap-y-3.5 tablet:mb-5 tablet:flex-row tablet:items-center">
-          <div className="flex items-center gap-3">
+    <div className="flex min-h-screen justify-center rounded-lg bg-gradient-to-tl from-primary3/60 via-primary3/30 via-5% to-primary3/0 px-5 pb-10 pt-5 tablet:px-6 tablet:pt-6">
+      <div className="flex w-full max-w-[1000px] flex-col">
+        <div className="mb-8 flex flex-col items-start gap-x-4 gap-y-3 tablet:mb-3 tablet:flex-row tablet:items-center">
+          <div className="flex items-center gap-1 tablet:gap-2">
             <div
-              className={`relative flex h-12 w-12 flex-shrink-0 items-center rounded-md ${bgDark && 'bg-black'}`}
+              className={`relative flex aspect-square w-12 flex-shrink-0 items-center rounded-md ${bgDark && 'bg-black'}`}
             >
               <Image
                 src={`/image/projects/${id}/logo.png`}
@@ -54,11 +54,13 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 className="object-contain p-1"
               />
             </div>
-            <h1 className="text-xl font-bold tablet:text-2xl desktop:text-3xl">
+
+            <h1 className="text-xl font-bold tablet:text-xl desktop:text-2xl">
               {title}
             </h1>
           </div>
-          <p className="flex flex-wrap gap-1.5 text-dark3 tablet:text-xl">
+
+          <p className="flex flex-wrap gap-1.5 text-dark2 tablet:text-xl">
             {Array.isArray(description)
               ? description.map((desc, idx) => (
                   <span key={`${id}-desc-${idx}`}>{desc}</span>
@@ -66,7 +68,8 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               : description}
           </p>
         </div>
-        <div className="px-4">
+
+        <div className="px-0 tablet:px-2">
           <div className="grid grid-cols-1 gap-12 tablet:grid-cols-2">
             <table>
               <tbody className="[&_*]:text-start [&_th]:whitespace-nowrap [&_th]:pr-8 [&_th]:font-semibold">
@@ -137,7 +140,7 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             </table>
           </div>
           <Tab
-            className="mt-8"
+            className="mt-4 tablet:mt-8"
             tabMenus={[
               '담당 업무',
               ...(troubles ? ['트러블 슈팅'] : []),
@@ -147,12 +150,12 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             tabContents={[
               <ul
                 key="proj-detail-tab-1"
-                className="flex flex-col gap-4 max-tablet:pl-6"
+                className="flex flex-col gap-4 max-tablet:pl-3"
               >
                 {tasks.map((task, idx) => (
                   <li
                     key={`proj-detail-task-${idx}`}
-                    className="list-disc font-light leading-normal [&>b]:font-semibold"
+                    className="list-disc font-light leading-relaxed [&>b]:font-semibold"
                     dangerouslySetInnerHTML={{ __html: task }}
                   ></li>
                 ))}
@@ -161,12 +164,12 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 ? [
                     <ul
                       key="proj-detail-tab-2"
-                      className="flex flex-col gap-4 max-tablet:pl-6"
+                      className="flex flex-col gap-4 max-tablet:pl-3"
                     >
                       {troubles.map((task, idx) => (
                         <li
                           key={`proj-detail-trou-${idx}`}
-                          className="list-disc font-light leading-normal [&>b]:font-semibold"
+                          className="list-disc font-light leading-relaxed [&>b]:font-semibold"
                           dangerouslySetInnerHTML={{ __html: task }}
                         ></li>
                       ))}
@@ -177,12 +180,12 @@ async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
                 ? [
                     <ul
                       key="proj-detail-tab-3"
-                      className="flex flex-col gap-4 max-tablet:pl-6"
+                      className="flex flex-col gap-4 max-tablet:pl-3"
                     >
                       {learnings.map((task, idx) => (
                         <li
                           key={`proj-detail-lear-${idx}`}
-                          className="list-disc font-light leading-normal [&>b]:font-semibold"
+                          className="list-disc font-light leading-relaxed [&>b]:font-semibold"
                           dangerouslySetInnerHTML={{ __html: task }}
                         ></li>
                       ))}

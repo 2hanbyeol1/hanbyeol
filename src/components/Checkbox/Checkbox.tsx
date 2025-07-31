@@ -18,7 +18,7 @@ function Checkbox({
   };
   const inputVariantByChecked = {
     checked: 'bg-primary/90',
-    unchecked: 'bg-primary/25 group-hover:bg-primary/40',
+    unchecked: 'bg-primary/20 group-hover:bg-primary/25',
   };
   const labelVariant = {
     sm: 'text-sm',

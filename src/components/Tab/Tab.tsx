@@ -21,14 +21,16 @@ function Tab({ className, tabMenus, tabContents }: TabProps) {
         {tabMenus.map((menu, idx) => (
           <button
             key={`tab-menu-${idx}`}
-            className={`border-b-2 px-1 pb-2 ${activeIndex === idx ? 'border-primary text-primary' : 'border-transparent text-dark2'}`}
+            className={`border-b-2 px-1 pb-2 text-sm tablet:text-base ${activeIndex === idx ? 'border-primary text-primary' : 'border-transparent text-dark2'}`}
             onClick={() => handleMenuClick(idx)}
           >
             {menu}
           </button>
         ))}
       </div>
-      <div className="w-full max-w-full p-4">{tabContents[activeIndex]}</div>
+      <div className="w-full max-w-full px-3 py-3">
+        {tabContents[activeIndex]}
+      </div>
     </div>
   );
 }

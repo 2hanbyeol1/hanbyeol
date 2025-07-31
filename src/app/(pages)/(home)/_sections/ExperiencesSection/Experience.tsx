@@ -9,7 +9,7 @@ function Experience({
   experience: TExperience;
 }) {
   return (
-    <div className="flex flex-col gap-11">
+    <div className="flex flex-col gap-8">
       <div className="flex flex-col items-center gap-5 tablet:flex-row">
         <div className="relative">
           <div className="relative aspect-square w-16 shrink-0 overflow-hidden rounded-lg">

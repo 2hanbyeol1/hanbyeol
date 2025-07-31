@@ -13,10 +13,10 @@ function Project({
   return (
     <Link
       href={PROJECT_DETAIL_PATH({ projectId: id })}
-      className="group/project flex w-64 -translate-x-1/2 flex-col items-center duration-100 hover:translate-y-3"
+      className="group/project flex w-full flex-col items-center rounded-xl px-6 py-10 shadow-sm shadow-dark/15 duration-100 hover:translate-y-3 hover:shadow-lg"
     >
       <div
-        className={`mb-5 flex aspect-square items-center justify-center rounded-md p-5 shadow-lg shadow-dark/15 ${bgDark ? 'bg-black' : ''}`}
+        className={`mb-5 flex aspect-square items-center justify-center rounded-md p-3 ${bgDark ? 'bg-black' : ''}`}
       >
         <Image
           width={60}

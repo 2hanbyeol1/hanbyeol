@@ -27,6 +27,14 @@ function SkillsSection() {
         className="absolute -left-32 -top-32 -z-50 aspect-square w-full max-w-[30rem] rounded-full bg-primary/30 blur-[220px]"
         aria-hidden
       ></div>
+
+      <div className="flex flex-col items-center gap-3">
+        <h2 className="text-center text-2xl font-semibold">기술 스택</h2>
+        <p className="text-center text-dark3">
+          다양한 프로젝트에서 활용해본 기술입니다
+        </p>
+      </div>
+
       <motion.div
         className="mx-auto grid w-full max-w-[40rem] grid-cols-5 gap-x-2 gap-y-2 foldable:grid-cols-7 foldable:gap-x-4 foldable:gap-y-4"
         layout
