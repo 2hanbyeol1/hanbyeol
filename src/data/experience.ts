@@ -102,6 +102,10 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
             text: '[Github] Excalidraw - (MERGED) PNG로 내보낼 때 모든 파일로 저장되는 버그 수정',
             url: 'https://github.com/excalidraw/excalidraw/pull/8946',
           },
+          {
+            text: '[Github] ko.react.dev - (MERGED) 처음부터 React 앱 만들기 문서 번역',
+            url: 'https://github.com/reactjs/ko.react.dev/pull/1211',
+          },
         ],
       },
     ],
