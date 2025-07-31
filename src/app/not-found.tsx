@@ -1,5 +1,6 @@
-import React from 'react';
-import Button from './_components/Button/Button';
+import { MAIN_PATH } from '@/constants/path';
+
+import Button from '../components/Button/Button';
 
 function GlobalNotFoundPage() {
   return (
@@ -12,7 +13,7 @@ function GlobalNotFoundPage() {
           </h1>
           <p className="text-center">페이지 주소를 다시 확인해주세요.</p>
         </div>
-        <Button className="mt-1" href="/">
+        <Button className="mt-1" href={MAIN_PATH()}>
           홈으로 가기
         </Button>
       </div>

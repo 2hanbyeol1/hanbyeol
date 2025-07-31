@@ -1,16 +1,18 @@
 import type { MetadataRoute } from 'next';
-import { PROJECT_CONTENTS } from './_data/project';
+
+import { PROJECT_DETAIL_PATH } from '@/constants/path';
+
+import { PROJECT_CONTENTS } from '../data/project';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const BASE_URL = 'https://hanbyeol.vercel.app';
-  const projectDetailSitemap = PROJECT_CONTENTS.map(({ id }) => ({
-    url: `${BASE_URL}/project/${id}`,
-  }));
 
   return [
     {
       url: BASE_URL,
     },
-    ...projectDetailSitemap,
+    ...PROJECT_CONTENTS.map(({ id }) => ({
+      url: `${BASE_URL}${PROJECT_DETAIL_PATH({ projectId: id })}`,
+    })),
   ];
 }
