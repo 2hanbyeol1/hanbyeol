@@ -6,6 +6,10 @@
   @apply leading-none;
 }
 
+body {
+  font-synthesis: none;
+}
+
 body * {
   -ms-overflow-style: none;
 
