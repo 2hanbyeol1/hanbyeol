@@ -104,7 +104,7 @@ function Project({
           </div>
           <div className="flex flex-wrap items-center gap-x-3">
             <div className="text-lg font-semibold tablet:text-xl">{title}</div>
-            <div className="text-dark2">{subtitle}</div>
+            <div className="leading-snug text-dark2">{subtitle}</div>
           </div>
         </div>
       </div>
