@@ -63,7 +63,7 @@ function Experience({
                   {activity.achievements.map((achievement, idx) => (
                     <li
                       key={`ach-${title}-${idx}`}
-                      className="leading-normal [&>b]:font-semibold"
+                      className="leading-normal underline-offset-2 [&>b]:font-semibold [&_a]:text-primary [&_a]:underline"
                       dangerouslySetInnerHTML={{ __html: `→ ${achievement}` }}
                     />
                   ))}

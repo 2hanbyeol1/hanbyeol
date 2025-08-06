@@ -49,8 +49,8 @@ function Project({
         {website && (
           <Link href={website} target="_blank">
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               src="/icon/link.svg"
               alt={`${title} 웹사이트 링크`}
               className="fill-dark2"
@@ -60,9 +60,9 @@ function Project({
         {github && (
           <Link href={github} target="_blank">
             <Image
-              width={28}
-              height={28}
-              src="/image/github.png"
+              width={32}
+              height={32}
+              src="/icon/github.svg"
               alt={`${title} 깃허브 링크`}
               className="fill-dark2"
             />
@@ -71,8 +71,8 @@ function Project({
         {images && images.length > 0 && (
           <button onClick={openImageModal}>
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               src="/icon/image.svg"
               alt={`프로젝트 ${title} 링크`}
               className="fill-dark2"
@@ -111,24 +111,27 @@ function Project({
         </div>
       </div>
 
-      <div className="flex flex-col gap-5">
-        <div className="flex items-center gap-3">
-          {!team ? (
-            <div className="rounded-md bg-dark/10 px-4 py-0.5 text-sm font-semibold">
-              개인
-            </div>
-          ) : (
-            <>
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-wrap gap-x-8 gap-y-4">
+          <div className="flex items-center gap-3">
+            {!team ? (
               <div className="rounded-md bg-dark/10 px-4 py-0.5 text-sm font-semibold">
-                팀
+                개인
               </div>
-              {team.fe && <div>FE {team.fe}명</div>}
-              {team.be && <div>BE {team.be}명</div>}
-              {team.designer && <div>디자이너 {team.designer}명</div>}
-            </>
-          )}
+            ) : (
+              <>
+                <div className="rounded-md bg-dark/10 px-4 py-0.5 text-sm font-semibold">
+                  팀
+                </div>
+                {team.fe && <div>FE {team.fe}명</div>}
+                {team.be && <div>BE {team.be}명</div>}
+                {team.designer && <div>디자이너 {team.designer}명</div>}
+              </>
+            )}
+          </div>
         </div>
-        <ul className="flex flex-col gap-2 max-tablet:pl-3 desktop:ml-4">
+
+        <ul className="flex flex-col gap-3 max-tablet:pl-3 tablet:ml-4">
           {tasks.map((task, idx) => (
             <li
               key={`proj-detail-task-${idx}`}

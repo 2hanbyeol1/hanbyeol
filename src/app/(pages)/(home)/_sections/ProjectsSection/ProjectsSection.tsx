@@ -13,7 +13,7 @@ function ProjectsSection() {
       sectionId={TSectionId.PROJECTS}
       className="relative scroll-mt-32 px-6 tablet:px-10"
     >
-      <ul className="mx-auto flex w-full max-w-[58rem] flex-col gap-x-4 gap-y-32">
+      <ul className="mx-auto flex w-full max-w-[58rem] flex-col gap-x-4 gap-y-52">
         {PROJECT_CONTENTS.map((project) => (
           <li key={project.id}>
             <Project project={project} />
