@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   title: '이한별 | 프론트엔드 개발자',
   description:
     'FE 개발자 이한별의 소개, 기술, 경험, 프로젝트를 확인할 수 있는 포트폴리오입니다.',
+  openGraph: {
+    title: '이한별 | 프론트엔드 개발자',
+    description:
+      'FE 개발자 이한별의 소개, 기술, 경험, 프로젝트를 확인할 수 있는 포트폴리오입니다.',
+    images: [
+      {
+        url: '/image/og-image.png',
+      },
+    ],
+    type: 'website',
+  },
 };
 
 const pretendard = localFont({
