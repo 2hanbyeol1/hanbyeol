@@ -10,6 +10,7 @@ function Modal() {
 
   useEffect(() => {
     if (!modalOption || !modalOption?.duration) return;
+
     const timeoutId = setTimeout(() => {
       closeModal();
     }, modalOption.duration);
@@ -29,7 +30,7 @@ function Modal() {
           onClick={closeModal}
         >
           <motion.div
-            className="max-h-full max-w-full rounded-3xl bg-white p-10"
+            className="max-h-full max-w-full rounded-3xl bg-white p-6 tablet:p-10"
             initial={{ translateY: 20, opacity: 0, scale: 0.8 }}
             animate={{ translateY: 0, opacity: 1, scale: 1 }}
             exit={{ translateY: 20, opacity: 0, scale: 0.8 }}

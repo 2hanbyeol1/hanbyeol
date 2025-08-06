@@ -1,7 +1,9 @@
 'use client';
 import Image from 'next/image';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css/pagination';
 
 import 'swiper/css';
 
@@ -21,25 +23,44 @@ function ImageSwiper({
   ratio,
   transition = 2500,
 }: ImageSwiperProps) {
+  if (images.length === 1) {
+    const { src, caption } = images[0];
+    return (
+      <div style={{ maxWidth: width, width }} className="mx-auto">
+        <figure className="flex w-full flex-col items-center gap-2 text-sm">
+          <div
+            style={{
+              aspectRatio: `${ratio[0]}/${ratio[1]}`,
+            }}
+            className="relative w-full"
+          >
+            <Image src={src} alt={caption} fill className="object-contain" />
+          </div>
+          <figcaption className="whitespace-nowrap text-dark2">
+            {caption}
+          </figcaption>
+        </figure>
+      </div>
+    );
+  }
+
   return (
     <Swiper
+      style={{
+        maxWidth: width,
+      }}
       slidesPerView={1}
-      modules={[Autoplay]}
+      pagination={{ dynamicBullets: true }}
+      modules={[Autoplay, Pagination]}
       autoplay={{
         delay: transition,
       }}
       loop={true}
-      className="mr-auto"
-      // className="w-full"
+      className="mr-auto w-full"
     >
       {images.map(({ src, caption }) => (
         <SwiperSlide key={caption}>
-          <figure
-            style={{
-              maxWidth: width,
-            }}
-            className="flex flex-col items-center gap-2 text-sm"
-          >
+          <figure className="mx-auto flex w-full flex-col items-center gap-2 text-sm">
             <div
               style={{
                 aspectRatio: `${ratio[0]}/${ratio[1]}`,
@@ -48,7 +69,9 @@ function ImageSwiper({
             >
               <Image src={src} alt={caption} fill className="object-contain" />
             </div>
-            <figcaption className="text-dark2">{caption}</figcaption>
+            <figcaption className="mb-12 whitespace-nowrap text-dark2">
+              {caption}
+            </figcaption>
           </figure>
         </SwiperSlide>
       ))}

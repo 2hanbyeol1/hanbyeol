@@ -12,14 +12,15 @@ function ContactSection() {
       sectionId={TSectionId.CONTACT}
       className="flex h-screen w-full items-center justify-center"
     >
-      <div className="flex flex-col gap-7 px-6">
+      <div className="flex flex-col items-center gap-5 px-6">
         <div className="flex flex-col items-center gap-3">
           <h4 className="text-3xl font-bold">끝까지 읽어주셔서 감사합니다</h4>
-          <div className="text-lg">
+          <div className="mb-1 text-lg">
             궁금한 점이 있으실 경우, 편하게 연락 부탁드립니다
           </div>
-          <EmailCopyButton />
         </div>
+
+        <EmailCopyButton />
 
         <div className="grid grid-cols-2 gap-1.5 tablet:grid-cols-4">
           {CONTACT_LINKS.map(({ href, text }) => (

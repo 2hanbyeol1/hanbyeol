@@ -3,7 +3,7 @@ import { TSkillImgFileName } from './skill';
 export interface TProject {
   id: string;
   title: string;
-  subtitle: string | string[];
+  subtitle: string;
   duration: [Date, Date];
   mainSkills: TSkillImgFileName[];
   isMain: boolean; // 주요 프로젝트 여부
@@ -13,6 +13,7 @@ export interface TProject {
   troubles?: string[];
   learnings?: string[];
   images?: { src: string; caption: string }[];
+  github?: string;
   website?: string;
   isMobile?: boolean;
 }
@@ -27,7 +28,7 @@ export const PROJECT_CONTENTS: TProject[] = [
   {
     id: 'talix',
     title: 'TALIX',
-    subtitle: ['경험 태그를 통한 인재 검색,', 'SaaS 프로덕트'],
+    subtitle: '경험 태그를 통한 인재 검색, SaaS 프로덕트',
     duration: [new Date('2025-02-01'), new Date('2025-04-01')],
     mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
     isMain: true,
@@ -54,7 +55,6 @@ export const PROJECT_CONTENTS: TProject[] = [
       'jest + react-testing-library를 이용한 <b>테스트 코드</b> 작성',
       '<b>PM과의 소통</b>',
     ],
-    website: 'https://talix.kr/',
     images: [
       {
         src: 'project',
@@ -75,21 +75,9 @@ export const PROJECT_CONTENTS: TProject[] = [
     ],
   },
   {
-    id: 'portfolio',
-    title: '포트폴리오',
-    subtitle: ['FE 개발자 이한별,', '포트폴리오 웹사이트'],
-    duration: [new Date('2025-01-01'), new Date('2025-05-01')],
-    mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
-    isMain: false,
-    tasks: [
-      'Intro, Skill, Experience, Projects, Contact 5개 섹션으로 구성',
-      '디자인, 퍼블리싱',
-    ],
-  },
-  {
     id: 'searchright',
     title: '서치라이트',
-    subtitle: ['인재 추천 솔루션,', '서치라이트를 소개하는 랜딩페이지'],
+    subtitle: '인재 추천 솔루션, 서치라이트를 소개하는 랜딩페이지',
     duration: [new Date('2024-09-01'), new Date('2024-11-01')],
     mainSkills: ['next', 'typescript', 'tailwind-css', 'zustand'],
     isMain: true,
@@ -146,7 +134,7 @@ export const PROJECT_CONTENTS: TProject[] = [
   {
     id: 'oosie',
     title: 'OOSIE',
-    subtitle: ['기록, 챌린지를 통한', '헬스 케어 커뮤니티'],
+    subtitle: '기록, 챌린지를 통한 헬스 케어 커뮤니티',
     duration: [new Date('2024-07-01'), new Date('2024-08-01')],
     mainSkills: [
       'next',
@@ -170,7 +158,7 @@ export const PROJECT_CONTENTS: TProject[] = [
     ],
     tasks: [
       '<b>식단, 운동 조회 및 삭제</b><br>달력에서 날짜를 선택해 해당 날짜의 식단과 운동을 조회하는 기능 구현<br>날짜 선택 방식이 불편하다는 사용자 피드백<br>→ swiper를 이용하여 캘린더 날짜 전환 방식을 드래그로 변경',
-      '<b>식단, 운동 기록 및 수정</b><br>코드의 유지보수성과 가독성을 개선하기 위해 약 50 줄의 주요 로직을 커스텀 훅으로 분리<br>날짜와 끼니 별로 하나의 식단을 등록 및 수정 가능하게 구현<br>낙관적 업데이트를 적용한 운동 완료 체크<br>음식의 칼로리 입력에 어려움을 겪는다는 유저 테스트 결과<br>→ debounce를 활용한 음식 영양 성분 검색 기능 추가',
+      '<b>식단, 운동 기록 및 수정</b><br>코드의 유지보수성과 가독성을 개선하기 위해 약 50줄의 주요 로직을 커스텀 훅으로 분리<br>날짜와 끼니 별로 하나의 식단을 등록 및 수정 가능하게 구현<br>낙관적 업데이트를 적용한 운동 완료 체크<br>음식의 칼로리 입력에 어려움을 겪는다는 유저 테스트 결과<br>→ debounce를 활용한 음식 영양 성분 검색 기능 추가',
       '<b>캘린더, 로딩 컴포넌트 구현 및 UI 개선</b><br>캘린더, 로딩 컴포넌트 제작<br>디자이너 피드백을 반영한 공통 컴포넌트 UI 개선',
       '<b>프로젝트 문서화 및 기술 스택 정리</b>',
       '<b>반응형 웹 페이지 구현</b>',
@@ -186,105 +174,13 @@ export const PROJECT_CONTENTS: TProject[] = [
       '<b>Tanstack query 아키텍처에 대한 논의</b>, 팀원들과 회의, 아키텍처에 대한 이해 증진',
       '<b>디자이너와 협업</b> 및 <b>Figma</b>를 활용한 웹 퍼블리싱 경험',
     ],
-    website: 'https://oosie.vercel.app',
-  },
-  {
-    id: 'culture-train',
-    title: '문화열차',
-    subtitle: '공연 예약 시스템',
-    duration: [new Date('2024-07-01'), new Date('2024-07-01')],
-    mainSkills: [
-      'next',
-      'typescript',
-      'tailwind-css',
-      'zustand',
-      'tanstack-query',
-      'supabase',
-    ],
-    tasks: [
-      '<b>팀장</b><br>역할 분담, 회의 주도',
-      '<b>디자인</b>',
-      '<b>메인페이지</b> 개발<br>무한스크롤<br>스크롤 버튼',
-      '<b>로딩/에러 페이지</b>',
-    ],
-    learnings: [
-      '새로운 css property - <b>transform origin 학습</b>',
-      '`useInfiniteQuery`를 이용한 <b>무한스크롤 구현 경험</b>',
-    ],
-    images: [
-      {
-        src: 'main',
-        caption: '메인 페이지',
-      },
-      {
-        src: 'loading',
-        caption: '로딩 페이지',
-      },
-      {
-        src: 'error',
-        caption: '에러 페이지',
-      },
-    ],
-    isMain: false,
-    team: {
-      fe: 6,
-    },
-    website: 'https://munhwa-yeolcha.vercel.app',
-  },
-  {
-    id: 'movie-movie',
-    title: '무비무비',
-    subtitle: '영화 검색 웹페이지',
-    duration: [new Date('2024-05-01'), new Date('2024-05-01')],
-    mainSkills: ['html', 'css', 'javascript'],
-    isMain: false,
-    bgDark: true,
-    team: {
-      fe: 6,
-    },
-    website: 'https://2hanbyeol1.github.io/movie-movie/',
-    tasks: [
-      '<b>팀장</b><br>역할 분담, 회의 주도',
-      '<b>메인 페이지</b><br>IMDb API를 이용한 인기 영화 정보 조회<br>영화 검색 및 필터<br>스크롤 감지 헤더, 스크롤 탑 버튼<br>영어, 한국어로 조회',
-      '<b>상세 정보 및 리뷰 페이지</b><br>퍼블리싱<br>리뷰 유효성 검사',
-      '<b>반응형</b> 페이지',
-    ],
-    images: [
-      {
-        src: 'main',
-        caption: '메인 페이지',
-      },
-      {
-        src: 'detail',
-        caption: '상세 페이지',
-      },
-    ],
-  },
-  {
-    id: 'chat-chat',
-    title: '챗챗',
-    subtitle: ['Web Socket 학습용', '채팅 애플리케이션'],
-    duration: [new Date('2023-10-01'), new Date('2023-12-01')],
-    mainSkills: ['react', 'javascript', 'styled-component', 'node'],
-    isMain: false,
-    bgDark: true,
-    tasks: ['<b>가입 및 로그인 기능</b>', '<b>채팅 기능</b>', '<b>반응형</b>'],
-    learnings: [
-      '<b>React + Typescript</b> 공부',
-      '<b>Node.js 및 Web Socket</b> 공부',
-    ],
-    images: [
-      {
-        src: 'login',
-        caption: '로그인 페이지',
-      },
-    ],
-    isMobile: true,
+    github: 'https://github.com/2hanbyeol1/oosie',
+    // website: 'https://oosie.vercel.app',
   },
   {
     id: 'egomogo',
     title: 'egomogo',
-    subtitle: ['명지대 인근 음식점 랜덤 추첨', '모바일 애플리케이션'],
+    subtitle: '명지대 인근 음식점 랜덤 추첨, 모바일 애플리케이션',
     duration: [new Date('2023-07-01'), new Date('2023-08-01')],
     mainSkills: [
       'react-native',
@@ -318,11 +214,12 @@ export const PROJECT_CONTENTS: TProject[] = [
       '<b>카테고리</b>',
       '<b>카카오맵 API를 이용한 식당 위치 표시</b>',
     ],
+    github: 'https://github.com/2hanbyeol1/egomogo-front-end',
   },
   {
     id: 'liberty-52',
     title: 'Liberty 52 Frame',
-    subtitle: ['커스텀 스피커, Liberty 52', '쇼핑몰 및 관리자 서비스'],
+    subtitle: '커스텀 스피커, Liberty 52 쇼핑몰 및 관리자 서비스',
     duration: [new Date('2023-03-01'), new Date('2023-12-01')],
     mainSkills: [
       'react',
@@ -367,7 +264,6 @@ export const PROJECT_CONTENTS: TProject[] = [
       '<b>관리자 페이지와 쇼핑몰 페이지 데이터 동기화</b>',
       '<b>패키지 구조 설계</b>',
       '<b>9개의 공용 컴포넌트 구현</b>',
-      '<b>지속적인 리팩토링</b>',
     ],
     troubles: [
       '<b>이미지 업스케일링 결과 링크가 about:blank로 나옴</b><br>API에서 횟수 제한에 걸리면 response가 201지만 결과 값이 빈 문자열로 반환됨<br>→ 결과 이미지 주소가 빈 문자열인지 확인하고 경고 창을 띄움',
@@ -379,5 +275,6 @@ export const PROJECT_CONTENTS: TProject[] = [
       'React, axios 등 프로젝트에 필요한 기술을 신속하게 배우고 적용하며 <b>새로운 기술 학습에 익숙</b>해짐',
       '<b>고객사와 소통 경험</b>',
     ],
+    github: 'https://github.com/2hanbyeol1/liberty-front-end',
   },
 ];

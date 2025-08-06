@@ -30,7 +30,7 @@ function Experience({
         </div>
       </div>
 
-      <div className="flex flex-col gap-11">
+      <div className="flex flex-col gap-10">
         {activities.map((activity, idx) => (
           <div
             key={`act-${title}-${idx}`}
