@@ -110,4 +110,40 @@ export const EXPERIENCE_CONTENTS: TExperience[] = [
       },
     ],
   },
+  {
+    title: '명지대학교',
+    image: 'mju.png',
+    subtitle: '융합소프트웨어학부',
+    activities: [
+      {
+        works: [
+          '<b>4.07</b> / 4.5',
+          '객체지향적 사고와 프로그래밍, 웹 프로그래밍, 모바일 프로그래밍, 시스템 프로그래밍, 비즈니스 모델링 등 수강',
+        ],
+        duration: [new Date('2020-03-01'), new Date('2023-02-01')],
+        links: [
+          {
+            text: '[블로그] Git 학습 내용',
+            url: 'https://velog.io/@2hanbyeol1/series/Git',
+          },
+          {
+            text: '[Github] Walktour - (OPEN) props에 대한 설명 추가',
+            url: 'https://github.com/alfrdmalr/walktour/pull/146',
+          },
+          {
+            text: '[Github] Excalidraw - (CLOSED) 한국어용 손글씨 폰트 추가',
+            url: 'https://github.com/excalidraw/excalidraw/pull/8531',
+          },
+          {
+            text: '[Github] Excalidraw - (MERGED) PNG로 내보낼 때 모든 파일로 저장되는 버그 수정',
+            url: 'https://github.com/excalidraw/excalidraw/pull/8946',
+          },
+          {
+            text: '[Github] ko.react.dev - (MERGED) 처음부터 React 앱 만들기 문서 번역',
+            url: 'https://github.com/reactjs/ko.react.dev/pull/1211',
+          },
+        ],
+      },
+    ],
+  },
 ];

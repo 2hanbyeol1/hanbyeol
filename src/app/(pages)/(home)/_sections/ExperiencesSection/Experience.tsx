@@ -24,9 +24,11 @@ function Experience({
             <div className="text-lg tablet:text-xl">{subtitle}</div>
           </div>
 
-          <div className="leading-normal tracking-wide text-dark2">
-            {description}
-          </div>
+          {description && (
+            <div className="leading-normal tracking-wide text-dark2">
+              {description}
+            </div>
+          )}
         </div>
       </div>
 
