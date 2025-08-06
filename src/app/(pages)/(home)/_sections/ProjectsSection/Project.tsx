@@ -44,7 +44,7 @@ function Project({
   };
 
   return (
-    <div className="relative flex w-full flex-col gap-4">
+    <div className="relative flex w-full flex-col gap-6">
       <div className="absolute right-0 top-0 flex gap-4">
         {website && (
           <Link href={website} target="_blank">
@@ -81,7 +81,7 @@ function Project({
         )}
       </div>
 
-      <div className="flex flex-col gap-2.5">
+      <div className="flex flex-col gap-4">
         <div
           className="text-sm tracking-wider text-dark3"
           aria-label={`${parseDateToAriaLabel(duration[0])}부터 ${parseDateToAriaLabel(duration[1])}까지`}
@@ -109,7 +109,7 @@ function Project({
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         <div className="flex items-center gap-3">
           {!team ? (
             <div className="rounded-md bg-dark/10 px-4 py-0.5 text-sm font-semibold">
