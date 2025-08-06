@@ -14,8 +14,8 @@ function ContactSection() {
     >
       <div className="flex flex-col items-center gap-5 px-6">
         <div className="flex flex-col items-center gap-3">
-          <h4 className="text-3xl font-bold">끝까지 읽어주셔서 감사합니다</h4>
-          <div className="mb-1 text-lg">
+          <h4 className="text-2xl font-bold">끝까지 읽어주셔서 감사합니다</h4>
+          <div className="text-base tablet:text-lg">
             궁금한 점이 있으실 경우, 편하게 연락 부탁드립니다
           </div>
         </div>

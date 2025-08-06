@@ -23,7 +23,7 @@ function HeaderNav() {
         <Link
           key={`${section.id}-nav-link`}
           href={MAIN_PATH({ sectionId: section.id })}
-          className={`w-1/5 transition-all max-tablet:w-full ${section.id === activeSectionId ? 'text-base text-primary tablet:text-lg desktop:text-xl' : 'text-sm text-primary3 desktop:text-base'}`}
+          className={`w-1/5 whitespace-nowrap transition-all max-tablet:w-full max-tablet:text-center tablet:origin-left ${section.id === activeSectionId ? 'scale-110 text-primary tablet:scale-125' : 'text-sm text-primary3 desktop:text-base'}`}
         >
           {section.name}
         </Link>
